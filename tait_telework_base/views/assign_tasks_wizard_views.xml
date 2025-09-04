@@ -1,0 +1,61 @@
+<odoo>
+    <!-- Wizard Form View -->
+    <record id="view_assign_tasks_wizard_form" model="ir.ui.view">
+        <field name="name">assign.tasks.wizard.form</field>
+        <field name="model">assign.tasks.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Assign Tasks">
+                <group>
+                    <field name="task_count"/>
+                    <field name="recurring"/>
+                    <field name="project_id"/>
+                </group>
+                <footer>
+                    <button string="Assign" type="object" name="action_assign_tasks" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action Wizard -->
+    <record id="action_assign_tasks_wizard" model="ir.actions.act_window">
+        <field name="name">Assign Tasks</field>
+        <field name="res_model">assign.tasks.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Server Action for List/Kanban view -->
+    <record id="server_action_assign_tasks" model="ir.actions.server">
+        <field name="name">Assign Tasks</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">
+action = {
+    'name': 'Assign Tasks',
+    'type': 'ir.actions.act_window',
+    'res_model': 'assign.tasks.wizard',
+    'view_mode': 'form',
+    'target': 'new',
+}
+        </field>
+    </record>
+
+    <!-- Add button in Employee Form View -->
+    <record id="view_hr_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.assign.tasks</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(action_assign_tasks_wizard)d"
+                        string="Assign Tasks"
+                        type="action"
+                        class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

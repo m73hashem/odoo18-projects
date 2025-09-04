@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_hr_job_form_inherit_tasks" model="ir.ui.view">
+        <field name="name">hr.job.form.inherit.tasks</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_hr_job_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Roles (Tasks)" name="roles_tasks_page">
+                    <field name="task_ids">
+                        <list editable="bottom">
+                            <field name="task_name"/>
+                            <field name="task_description"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
