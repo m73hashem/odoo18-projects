@@ -1,0 +1,22 @@
+<odoo>
+    <!-- القائمة الرئيسية -->
+    <menuitem id="menu_test_project_expenses_root"
+              name="Test Project Expenses"
+              sequence="5"
+              groups="base.group_user" />  <!-- كل المستخدمين الداخليين -->
+
+    <!-- تعريف الأكشن لعرض الموديل -->
+    <record id="action_test_project_expenses" model="ir.actions.act_window">
+        <field name="name">Test Project Expenses</field>
+        <field name="res_model">project.expense.request</field> <!-- اسم الموديل -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- القائمة الفرعية المرتبطة بالأكشن -->
+    <menuitem id="menu_test_project_expenses_sub"
+              name="All Expenses"
+              parent="menu_test_project_expenses_root"
+              action="action_test_project_expenses"
+              sequence="1"
+              groups="base.group_user"/>
+</odoo>

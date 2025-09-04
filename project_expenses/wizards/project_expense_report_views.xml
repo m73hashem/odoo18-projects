@@ -1,0 +1,24 @@
+<odoo>
+    <record id="view_wizard_project_expenses" model="ir.ui.view">
+        <field name="name">wizard.project.expenses.form</field>
+        <field name="model">wizard.project.expenses</field>
+        <field name="arch" type="xml">
+            <form string="Project Expenses Report">
+                <group>
+                    <field name="project_ids" widget="many2many_tags"/>
+                </group>
+                <footer>
+                    <button string="Print" type="object" name="action_print" class="btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wizard_project_expenses" model="ir.actions.act_window">
+        <field name="name">Project Expenses Report</field>
+        <field name="res_model">wizard.project.expenses</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

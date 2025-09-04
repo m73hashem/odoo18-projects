@@ -1,0 +1,42 @@
+<odoo>
+    <!-- ============================= -->
+    <!-- Server Action: Generate Attendance -->
+    <!-- ============================= -->
+    <record id="server_action_generate_attendance" model="ir.actions.server">
+        <field name="name">Generate Attendance</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">
+# Loop through selected employees and generate attendance
+for record in records:
+    record.action_generate_attendance()
+        </field>
+    </record>
+
+    <!-- Action for the wizard called by the button 'Generate Attendence' -->
+    <record id="action_attendance_generation_wizard" model="ir.actions.act_window">
+        <field name="name">Generate Attendance</field>
+        <field name="res_model">attendance.generation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    
+
+    <!-- ============================= -->
+    <!-- Employee Form View: Add Button -->
+    <!-- ============================= -->
+    <record id="view_hr_employee_form_inherit_attendance" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.attendance</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button name="%(action_attendance_generation_wizard)d" 
+                    type="action"
+                    string="Generate Attendance"
+                    class="oe_highlight"/>
+            </header>
+        </field>
+    </record>
+</odoo>

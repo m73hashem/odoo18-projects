@@ -1,0 +1,181 @@
+<odoo>
+    <!-- List View -->
+    <record id="view_action_demo_item_list" model="ir.ui.view">
+        <field name="name">action.demo.item.list</field>
+        <field name="model">action.demo.item</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_action_demo_item_form" model="ir.ui.view">
+        <field name="name">action.demo.item.form</field>
+        <field name="model">action.demo.item</field>
+        <field name="arch" type="xml">
+            <form string="Demo Item">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="state"/>
+                        <field name="description"/>
+                    </group>
+
+                    <group>
+                        <button name="action_process_item"
+                                type="object"
+                                string="Mark as Processed"
+                                class="btn-primary"
+                                invisible="state == 'processed' "/>
+
+                        <button name="action_set_to_draft"
+                                type="object"
+                                string="Set to Draft"
+                                class="btn-secondary"
+                                invisible="state == 'draft' "/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_action_demo_item_kanban" model="ir.ui.view">
+        <field name="name">action.demo.item.kanban</field>
+        <field name="model">action.demo.item</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <field name="name"/>
+                            <div>
+                                <span>Status: </span>
+                                <field name="state"/>
+                            </div>
+                            <div>
+                                <field name="description"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Calendar View (تستخدم name فقط كتجربة) -->
+    <record id="view_action_demo_item_calendar" model="ir.ui.view">
+        <field name="name">action.demo.item.calendar</field>
+        <field name="model">action.demo.item</field>
+        <field name="arch" type="xml">
+            <calendar string="Demo Calendar" date_start="create_date" color="state">
+                <field name="name"/>
+                <field name="state"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_action_demo_item_graph" model="ir.ui.view">
+        <field name="name">action.demo.item.graph</field>
+        <field name="model">action.demo.item</field>
+        <field name="arch" type="xml">
+            <graph string="Demo Graph" type="bar">
+                <field name="state" type="row"/>
+                <field name="value" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Pivot View -->
+    <record id="view_action_demo_item_pivot" model="ir.ui.view">
+        <field name="name">action.demo.item.pivot</field>
+        <field name="model">action.demo.item</field>
+        <field name="arch" type="xml">
+            <pivot string="Demo Pivot">
+                <field name="state" type="row"/>
+                <field name="value" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_action_demo_item_search" model="ir.ui.view">
+        <field name="name">action.demo.item.search</field>
+        <field name="model">action.demo.item</field>
+        <field name="arch" type="xml">
+            <search string="Search Demo Items">
+                <field name="name"/>
+                <field name="state"/>
+                <filter string="Draft" name="filter_draft" domain="[('state','=','draft')]"/>
+                <filter string="Processed" name="filter_processed" domain="[('state','=','processed')]"/>
+            </search>
+        </field>
+    </record>
+
+
+    <!--Actions....................................    -->
+    <!--...........................................    -->
+
+    <!-- Window Action -->
+    <record id="action_action_demo_items" model="ir.actions.act_window">
+        <field name="name">Demo Items (Window Action)</field>
+        <field name="res_model">action.demo.item</field>
+        <field name="view_mode">list,form,kanban,calendar,graph,pivot</field>
+        <field name="search_view_id" ref="view_action_demo_item_search"/>
+        <field name="help" type="html">
+            <p>Create your first demo item.</p>
+        </field>
+    </record>
+
+    <record id="action_test_window" model="ir.actions.act_window">
+        <field name="name">Test Window</field>
+        <field name="res_model">test.window</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <h1 style="color: #00ff00; background-color:#aaaaaa;" >مرحبا بك في نافذة الاختبار</h1>
+            <p>Create your first demo item.</p>
+        </field>
+
+    </record>
+
+    <!--
+    <record id="action_action_demo_items" model="ir.actions.act_window">
+        <field name="name">Demo Items</field>
+        <field name="res_model">action.demo.item</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    -->
+
+    <!-- Server Action -->
+    <record id="server_action_process_item" model="ir.actions.server">
+        <field name="name">Process Demo Item (Server Action)</field>
+        <field name="model_id" ref="model_action_demo_item"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.action_process_item()
+        </field>
+    </record>
+
+
+
+    <!-- Menus -->
+    <menuitem id="menu_action_demo_root"
+              name="Action Demo"
+              sequence="10"/>
+
+    <menuitem id="menu_action_demo_items"
+              name="Demo Items"
+              parent="menu_action_demo_root"
+              action="action_action_demo_items"
+              sequence="10"/>
+
+    <menuitem id="menu_test_window"
+              name="Test window"
+              parent="menu_action_demo_root"
+              action="action_test_window"
+              sequence="10"/>
+</odoo>

@@ -1,0 +1,18 @@
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="demo client action assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="module" src="/demo_client_action/static/src/js/client_action_demo.js"/>
+        </xpath>
+    </template>
+
+
+    <template id="DemoClientActionTemplate" name="Demo Client Action Template">
+        <div class="o_demo_client_action">
+            <h1>Hello from Client Action 🚀</h1>
+            <p>This is a custom client action running in Odoo 18.</p>
+        </div>
+    </template>
+</odoo>
+-->

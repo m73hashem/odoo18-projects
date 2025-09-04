@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_registration_type_user,access.registration.type.user,model_registration_type,,1,1,1,1
+access_hr_job_task_user,access.hr.job.task.user,model_hr_job_task,,1,1,1,1
+access_assign_tasks_wizard_user,access.assign.tasks.wizard.user,model_assign_tasks_wizard,,1,1,1,1

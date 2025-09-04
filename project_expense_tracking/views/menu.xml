@@ -1,0 +1,21 @@
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_project_expense_root"
+              name="Project Expenses"
+              sequence="50"/>
+
+    <!-- Submenu for Expense Types -->
+    <menuitem id="menu_project_expense_type"
+              name="Expense Types"
+              parent="menu_project_expense_root"
+              action="action_project_expense_type"
+              sequence="10"/>
+
+     <!-- Menu request-->
+  <menuitem id="menu_project_expense_request"
+            name="Expense Requests"
+            parent="menu_project_expense_root"
+            action="action_project_expense_request"
+            sequence="20"/>
+
+</odoo>

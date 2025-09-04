@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_inherit_delivery_notes" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.delivery.notes</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+             <xpath expr="//field[@name='origin']" position="after">
+                <group class="mt16">
+                    <field name="delivery_notes" placeholder="Delivery notes from sales order" readonly="1"/>
+                </group>
+                 <group class="mt16">
+                    <field name="salesperson_id" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

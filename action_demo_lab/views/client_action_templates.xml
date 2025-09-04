@@ -1,0 +1,15 @@
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+     <t t-name="action_demo_lab.mytemp123">
+    <div class="p-4 o_my_client_action">
+            <h2>🎉 Welcome to Client Action Demo</h2>
+            <p>This client action is powered by OWL in Odoo 18.</p>
+            <button type="button" class="btn btn-primary"
+                t-on-click="() => this.env.services.action.doAction('action_demo_lab.action_demo_items')">
+                Go to Demo Items
+            </button>
+        </div>
+     </t>
+</templates>
+-->

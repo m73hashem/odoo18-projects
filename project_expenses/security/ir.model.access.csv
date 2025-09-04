@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_expense_request,access.project.expense.request,model_project_expense_request,,1,1,1,1
+access_project_expense_request_line,access.project.expense.request.line,model_project_expense_request_line,,1,1,1,1
+access_project_expense_product_line,access.project.expense.product.line,model_project_expense_product_line,,1,1,1,1
+access_project_expense_type,access.project.expense.type,model_project_expense_type,,1,1,1,1
+access_wizard_project_expenses,access.wizard.project.expenses,model_wizard_project_expenses,,1,1,1,1

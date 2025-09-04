@@ -1,0 +1,43 @@
+<odoo>
+    <template id="portal_expense_form" name="Portal Expense Form">
+        <t t-call="website.layout">
+            <div class="container">
+                <t t-if="error">
+                    <div class="alert alert-danger" role="alert">
+                        <t t-esc="error"/>
+                    </div>
+                </t>
+
+                <h1>Create Project Expense (Portal)</h1>
+                <form action="/project_expenses/portal/submit" method="post">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                    <div class="mb-3">
+                        <label>Project</label>
+                        <select name="project_id" required="required">
+                            <option value="">-- Select --</option>
+                            <t t-foreach="projects" t-as="p">
+                                <option t-att-value="p.id"><t t-esc="p.name"/></option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Expense Type</label>
+                        <select name="expense_type" required="required">
+                            <option value="">-- Select --</option>
+                            <t t-foreach="request.env['project.expense.type'].sudo().search([])" t-as="t">
+                                <option t-att-value="t.id"><t t-esc="t.name"/></option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Amount</label>
+                        <input type="number" name="amount" step="0.01" required="required"/>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+
+            </div>
+        </t>
+    </template>
+</odoo>

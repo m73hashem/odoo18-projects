@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_project_project_list_expenses" model="ir.ui.view">
+        <field name="name">project.project.list.expenses</field>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <list string="Projects">
+                <field name="name"/>
+                <field name="total_expense_amount"/>
+                <field name="task_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_project_expenses_kanban" model="ir.actions.act_window">
+        <field name="name">Project Expenses </field>
+        <field name="res_model">project.project</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="context">{'search_default_view_projects': 1, 'force_view_mode': 'kanban'}</field>
+    </record>
+
+</odoo>
+
+<!-- كانت مضافة في نهاية الكود ولكن تم استخدام ملف مستقل لكل ال menuitem
+    <menuitem
+            id="menu_project_expenses_root1"
+            name="Project Expenses11"
+            parent="project.menu_projects"
+            action="action_project_expenses_kanban" /> --> <!--groups="project_expenses.group_expense_manager, base.group_system"-->

@@ -1,0 +1,44 @@
+<odoo>
+    <template id="test_portal_projects_template" >
+        <t t-call="website.layout">
+            <div class="container my-5">
+                <h1 class="text-center mb-4">المشاريع العامة النشطة</h1>
+
+                <!-- شبكة عرض الكروت -->
+                <div class="row">
+                    <t t-foreach="projects" t-as="project">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary" t-esc="project.name"/>
+                                    <p class="card-text text-muted">
+                                        <t t-esc="project.description or 'لا يوجد وصف'"/>
+                                    </p>
+
+                                    <!-- جدول صغير داخل الكرت -->
+                                    <table class="table table-sm mb-3">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">مدير المشروع</th>
+                                                <td><t t-esc="project.user_id.name or 'N/A'"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">عدد المهام</th>
+                                                <td><t t-esc="project.task_count or 0"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <a t-att-href="'/public/project/%s' % project.id"
+                                       class="btn btn-outline-primary btn-sm">
+                                        عرض التفاصيل
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

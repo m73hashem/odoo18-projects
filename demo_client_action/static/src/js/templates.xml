@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-name="demo_client_action.mytemp">
+
+        <h1> Test Client Action</h1>
+    </t>
+
+</templates>

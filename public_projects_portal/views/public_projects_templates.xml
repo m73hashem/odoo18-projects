@@ -1,0 +1,27 @@
+<odoo>
+    <template id="template_public_projects">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <h1 class="text-center mb-4" style="background-color: #15a1bb;">Current.... Active Projects</h1>
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Project Manager</th>
+                            <th>Tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="projects" t-as="proj">
+                            <tr>
+                                <td><t t-esc="proj.name"/></td>
+                                <td><t t-esc="proj.user_id.name or 'N/A'"/></td>
+                                <td><t t-esc="proj.task_count"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

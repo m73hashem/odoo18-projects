@@ -1,0 +1,60 @@
+<odoo>
+  <record id="view_project_expense_request_form_inherit" model="ir.ui.view">
+    <field name="name">project.expense.request.form.inherit</field>
+    <field name="model">project.expense.request</field>
+    <field name="inherit_id" ref="project_expense_tracking.view_project_expense_request_form"/>
+    <field name="arch" type="xml">
+
+      <!-- تعديل الـ notebook: إضافة صفحة جديدة "Product Lines" وتعديل "Expense Lines" -->
+      <xpath expr="//sheet/notebook" position="replace">
+        <notebook>
+          <page string="Expense Lines">
+            <field name="line_ids">
+              <list editable="bottom">
+                <field name="expense_type_id"/>
+                <field name="amount"/>
+              </list>
+            </field>
+          </page>
+          <page string="Product Lines555555555">
+            <field name="product_line_ids">
+              <list editable="bottom">
+                <field name="product_id"/>
+                <field name="quantity"/>
+              </list>
+            </field>
+          </page>
+        </notebook>
+      </xpath>
+
+      <!-- إضافة الحقل picking_id مخفي داخل form -->
+      <xpath expr="//sheet" position="inside">
+        <field name="picking_id" invisible="1"/>
+      </xpath>
+
+      <!-- إضافة زر داخل الـ header (داخل حالة 'cancel') -->
+        <!--
+      <xpath expr="//header" position="inside">
+        <button name="action_set_to_draft" type="object" string="Set to Draft"
+                 class="btn-secondary"/>
+      </xpath>
+      -->
+
+      <!-- إضافة زر "Delivery" بعد الـ sheet -->
+      <xpath expr="//sheet" position="inside">
+        <div class="oe_button_box" name="button_box">
+          <button name="%(stock.action_picking_form)d"
+                  type="action"
+
+                  context="{'default_id': picking_id}"
+                  class="oe_stat_button"
+                  icon="fa-truck">
+            <field name="picking_id" invisible="1"/>
+            <span>Delivery</span>
+          </button>
+        </div>
+      </xpath>
+
+    </field>
+  </record>
+</odoo>

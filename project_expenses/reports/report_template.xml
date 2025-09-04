@@ -1,0 +1,39 @@
+<odoo>
+    <record id="action_report_project_expenses" model="ir.actions.report">
+        <field name="name">Project Expenses Report</field>
+        <field name="model">wizard.project.expenses</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">project_expenses.report_project_expenses_document</field>
+        <field name="report_file">project_expenses.report_project_expenses_document</field>
+        <field name="binding_model_id" ref="project_expenses.model_wizard_project_expenses"/>
+        <field name="binding_type">action</field>
+        <field name="multi">True</field>
+    </record>
+
+    <template id="report_project_expenses_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <h2>Project Expenses Report</h2>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Project Manager</th>
+                            <th>Tasks</th>
+                            <th>Total Expenses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><t t-esc="doc['project_name']"/></td>
+                            <td><t t-esc="doc['project_manager']"/></td>
+                            <td><t t-esc="doc['task_count']"/></td>
+                            <td><t t-esc="doc['total_expenses']"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </t>
+        </t>
+    </template>
+
+</odoo>

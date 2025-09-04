@@ -1,0 +1,58 @@
+<odoo>
+    <!-- القائمة الرئيسية -->
+    <menuitem id="menu_project_expense_root"
+              name="Project Expenses"
+              sequence="10"/>
+
+    <!-- الإجراء -->
+    <record id="action_project_expense_report" model="ir.actions.act_window">
+        <field name="name">Project Expenses</field>
+        <field name="res_model">project.project</field>
+        <field name="view_mode">kanban,list</field>
+        <field name="context">{}</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <!-- ربط القائمة بالإجراء -->
+    <menuitem id="menu_project_expense_report"
+              name="Project Expense Report"
+              parent="menu_project_expense_root"
+              action="action_project_expense_report"
+              sequence="1"/>
+
+    <!-- Kanban View -->
+    <record id="view_project_expense_kanban" model="ir.ui.view">
+        <field name="name">project.project.kanban.expense</field>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="expense_total"/>
+                <field name="task_count"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record">
+                            <strong><field name="name"/></strong>
+                            <div>💰 Expense: <field name="expense_total"/></div>
+                            <div>📌 Tasks: <field name="task_count"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_project_expense_list" model="ir.ui.view">
+        <field name="name">project.project.list.expense</field>
+        <field name="model">project.project</field>
+        <field name="arch" type="xml">
+            <list default_order="expense_total desc">
+                <field name="name"/>
+                <field name="task_count"/>
+                <field name="expense_total"/>
+            </list>
+        </field>
+    </record>
+</odoo>

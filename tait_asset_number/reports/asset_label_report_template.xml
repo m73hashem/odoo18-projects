@@ -1,0 +1,54 @@
+<!--ملف مضاف لتكملة كود asset_lable_template.xml -->
+
+<odoo> 
+  <template id="asset_label_report_template_id">
+    <t t-call="web.basic_layout">
+        <t t-set="label_format" t-value="label_format_code"/>
+
+       <!-- <t t-set="label_format" t-value="ctx.get('label_format_code')"/> -->
+        
+        <!-- Debug line to test context -->
+    <p>Label Format Debug---: <t t-esc="label_format"/></p>
+      <!-- اختيار القالب الفرعي حسب الحجم -->
+     <t t-if="label_format == '4x6_size'">
+         <p>✅ الشرط تحقق وتم تحميل قالب 4x6</p>
+            <t t-call="tait_asset_number.label_design_4x6"/>
+        </t>
+        <t t-if="label_format == '6x10_size'">
+            <p>✅ الشرط تحقق وتم تحميل قالب test </p>
+            <t t-call="tait_asset_number.label_design_6x10"/>
+        </t>
+
+        
+    </t>
+  </template>
+
+  <template id="label_design_4x6">
+
+     <t t-set="records" t-value="docs and list(docs) or []"/> 
+    <t t-foreach="docs" t-as="o">
+      <div class="label-4x6">
+        <p>NameTest1: <t t-esc="o.name"/></p>
+        <p>Number: <t t-esc="o.asset_sequence"/></p>
+      </div>
+    </t>
+  </template>
+
+  <template id="label_design_6x10">
+
+
+      <p>بداية التصميم </p>
+      <t t-set="records" t-value="docs and list(docs) or []"/>
+    <t t-foreach="docs" t-as="o">
+      <div class="label-6x10">
+          <p>تم الدخول في التكرار</p>
+        <p><strong>Name:</strong> <t t-esc="o.name"/></p>
+        <p><strong>Number:</strong> <t t-esc="o.asset_sequence"/></p>
+        <p><strong>Company:</strong> <t t-esc="o.company_id.name"/></p>
+      </div>
+    </t>
+      <p>نهاية التصميم</p>
+      <p>عدد العناصر في docs: <t t-esc="len(docs)"/></p>
+
+  </template>
+</odoo>

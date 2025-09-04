@@ -1,0 +1,46 @@
+<odoo>
+    <!--00 الجذر الرئيسي -->
+    <menuitem
+        id="menu_project_expense_root"
+        name="Project Expenses"
+        sequence="10"
+
+    />
+
+    <!-- قائمة أنواع المصاريف 0-->
+    <menuitem
+        id="menu_project_expense_type"
+        name="Expense Types"
+        parent="menu_project_expense_root"
+        action="action_project_expense_type_list"
+        sequence="10"
+    />
+
+    <!--0 قائمة طلبات المصاريف -->
+    <menuitem
+        id="menu_project_expense_requests"
+        name="Expense Requests"
+        parent="menu_project_expense_root"
+        action="action_project_expense_requests"
+        sequence="20"
+    />
+
+    <!-- قائمة عرض المشاريع مع المصاريف 0..-->
+    <menuitem
+        id="menu_project_expenses_kanban"
+        name="Projects Expenses Overview"
+        parent="menu_project_expense_root"
+        action="action_project_expenses_kanban"
+        sequence="30"
+    />
+
+    <!-- قائمة معالج التقرير -->
+    <menuitem
+        id="menu_wizard_project_expenses"
+        name="Project Expenses Report"
+        parent="menu_project_expense_root"
+        action="action_wizard_project_expenses"
+        sequence="40"
+    />
+
+</odoo>

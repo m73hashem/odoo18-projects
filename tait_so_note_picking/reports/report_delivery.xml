@@ -1,0 +1,25 @@
+<odoo>
+    <template id="custom_report_delivery_document_inherit" inherit_id="stock.report_delivery_document">
+
+         <xpath expr="//div[@name='div_sched_date']" position="after">
+            <t t-if="o.sale_id and o.sale_id.user_id">
+                <div class="col col-3 mw-100 mb-2">
+                    <strong>Sales Person:</strong>
+                    <div class="m-0">
+                        <span t-esc="o.sale_id.user_id.name"/>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+
+        <xpath expr="//div[contains(@class, 'page')]" position="inside">
+            <t t-if="o.delivery_notes">
+                <div class="mt-4 border-top pt-3">
+                    <strong>Delivery Notes:</strong>
+                    <p t-field="o.delivery_notes" style="font-size: 11pt; white-space: pre-wrap;" />
+                </div>
+            </t>
+
+        </xpath>
+    </template>
+</odoo>

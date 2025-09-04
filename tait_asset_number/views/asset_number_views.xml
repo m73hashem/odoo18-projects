@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Form View Modification -->
+    <record id="view_account_asset_form_inherit_seq" model="ir.ui.view">
+        <field name="name">account.asset.form.inherit.seq</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_title']" position="before">
+                <h1>
+                <field name="asset_sequence" placeholder="New Asset"/>
+                </h1>
+            </xpath>
+
+            <xpath expr="//header" position="inside">
+            <button name="action_print_asset_label"
+                    string="Print Label"
+                    type="object"
+                    class="btn-info"
+                    icon="fa-print"/>
+        </xpath>
+        </field>
+    </record>
+
+    <!-- Tree View Modification -->
+    <record id="view_account_asset_tree_inherit_seq" model="ir.ui.view">
+        <field name="name">account.asset.tree.inherit.seq</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="asset_sequence"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

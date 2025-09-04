@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_expense_type,access_expense_type,model_project_expense_type,,1,1,1,1
+access_expense_request,access_expense_request,model_project_expense_request,,1,1,1,1
+access_project_expense_line,access_project_expense_line,model_project_expense_line,,1,1,1,1
+
+access_project_expense_product_line_user,access.project.expense.product.line.user,model_project_expense_request_product_line,base.group_user,1,1,1,1

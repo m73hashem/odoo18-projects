@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- QWeb Template -->
+        <template id="DemoClientActionTemplate" name="Demo Client Action Template">
+            <div class="o_demo_client_action">
+                <h1>Hello from Client Action 🚀</h1>
+                <p>This is a custom client action running in Odoo 18.</p>
+            </div>
+        </template>
+
+        <!-- Client Action -->
+        <record id="action_demo_client_action" model="ir.actions.client">
+            <field name="name">Demo Client Action</field>
+            <field name="tag">demo_client_action</field>
+        </record>
+
+        <!-- Menu to trigger the Client Action -->
+        <menuitem id="menu_demo_client_action_root"
+                  name="Demo Client Action...."
+                  sequence="10"
+                  action="action_demo_client_action"/>
+
+    </data>
+</odoo>

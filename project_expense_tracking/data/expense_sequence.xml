@@ -1,0 +1,10 @@
+<odoo>
+    <data noupdate="1">
+        <record id="seq_project_expense_request" model="ir.sequence">
+            <field name="name">Project Expense Request</field>
+            <field name="code">project.expense.request</field>
+            <field name="prefix">EXPREQ-</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

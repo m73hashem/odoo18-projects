@@ -1,0 +1,62 @@
+<odoo>
+    
+    <record id="asset_summery_report" model="ir.actions.report">
+        <field name="name">Asset Report</field>
+        <field name="model">account.asset</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">tait_asset_number.asset_summery_template</field>
+        <field name="report_file">tait_asset_number.asset_summery_template</field>
+        <field name="binding_model_id" ref="account_asset.model_account_asset"/>
+        <field name="binding_type">action</field>
+        <field name="multi">True</field>
+    </record>
+
+    
+    <template id="asset_summery_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                
+                <div class="page">
+                    <h2>Asset Summary Report</h2>
+                    <style>
+                        table {
+                            border: 1px solid black;
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+                        table th {
+                            border: 1px solid black;
+                            padding: 6px;
+                            background-color: #d8edeb;
+                            color: #de1f00;
+                            font-weight: bold;
+                            font-size: 24px; 
+                            text-align: left;
+                        }
+                        table td {
+                            border: 1px solid black;
+                            padding: 6px;
+                        }
+                        
+       
+                    </style>
+    
+                    <table >
+                        <thead>
+                            
+                                <th >Asset Name</th>
+                                <th>Asset Sequence</th>
+                            
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="asset">
+                                <td><t t-esc="asset.name"/></td>
+                                <td><t t-esc="asset.asset_sequence"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

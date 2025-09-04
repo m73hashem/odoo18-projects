@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_action_demo_item,access_action_demo_item,model_action_demo_item,,1,1,1,1
+access_test_window,access_test_window,model_test_window,,1,1,1,1

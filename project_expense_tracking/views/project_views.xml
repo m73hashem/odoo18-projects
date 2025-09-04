@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_project_inherit_form" model="ir.ui.view">
+        <field name="name">project.project.inherit.expense</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//sheet/group" position="after">
+                <group>
+                    <field name="expense_total" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

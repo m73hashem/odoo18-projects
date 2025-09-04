@@ -1,0 +1,45 @@
+<!--
+<odoo>
+  <report
+      id="action_report_asset_label"
+      model="account.asset"
+      string="Asset Label"
+      report_type="qweb-pdf"
+      name="tait_asset_number.asset_label_report_template_id"
+      file="tait_asset_number.asset_label_report_template_id"
+      print_report_name="'Asset Label - %s' % (object.name)"
+  />
+</odoo>
+-->
+<!--
+<odoo>
+
+  <record id="asset_label_report_action" model="ir.actions.report">
+    <field name="name">Asset Label</field>
+    <field name="model">account.asset</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">tait_asset_number.asset_label_report_template</field>
+    <field name="report_file">tait_asset_number.asset_label_report_template</field>
+    <field name="paperformat_id" ref="tait_asset_number.label_6x10cm"/>
+    <field name="print_report_name">'Asset Label - %s' % (object.name)</field>
+    <field name="binding_model_id" ref="account_asset.model_account_asset"/>
+  </record>
+
+  
+
+</odoo>
+-->
+
+<odoo>
+
+
+<record id="asset_label_report_action" model="ir.actions.report">
+    <field name="name">Asset Label</field>
+    <field name="model">account.asset</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">tait_asset_number.asset_label_report_template_id</field>
+   
+    <field name="print_report_name">'Asset Label - %s' % (object.name)</field>
+    <field name="binding_model_id" ref="account_asset.model_account_asset"/>
+</record>
+    </odoo>
