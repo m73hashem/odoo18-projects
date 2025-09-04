@@ -1,0 +1,19 @@
+<odoo>
+  <template id="custom_delivery_note_in_picking" inherit_id="stock.report_picking">
+    <xpath expr="//div[@id='informations']" position="inside">
+      <div t-if="o.sale_id and o.sale_id.user_id" class="col">
+        <strong >Salesperson</strong>
+        <div t-esc="o.sale_id.user_id.name"  />
+      </div>
+    </xpath>
+
+      <xpath expr="//div[@class='page o_report_stockpicking_operations']" position="inside">
+         <t t-if="o.delivery_notes">
+             <div class="mt-4 border-top pt-3">
+                 <strong>Delivery Notes:</strong>
+                 <p t-field="o.delivery_notes" style="font-size: 11pt; white-space: pre-wrap;" />
+             </div>
+         </t>
+    </xpath>
+  </template>
+</odoo>
