@@ -36,7 +36,7 @@ class HrEmployee(models.Model):
         if not contract or not contract.resource_calendar_id:
             return
     
-        # تحديد معاملات الغياب والتأخير بناءً على intensity_level
+
         if intensity_level == 'strict':
             absence_multiplier = 1.5
             late_multiplier = 1.2
@@ -55,7 +55,7 @@ class HrEmployee(models.Model):
         late_probability = max(0.05, 0.3 * (1 - attendance_rate) * late_multiplier)
         early_leave_probability = max(0.05, 0.3 * (1 - attendance_rate) * early_leave_multiplier)
     
-        # حذف السجلات المولدة مسبقًا في نفس الفترة
+
         self.env['hr.attendance'].search([
             ('employee_id', '=', self.id),
             ('generated_by_system', '=', True),
@@ -115,3 +115,33 @@ class HrEmployee(models.Model):
             current += timedelta(days=1)
     
         self.message_post(body=f"Attendances generated for the period {start_date} → {end_date} with intensity: {intensity_level}.")
+
+    # cron job method: last 7 days , normal intensity
+    def cron_generate_attendance_weekly(self):
+
+        start_date = fields.Date.today() - timedelta(days=7)
+        end_date = fields.Date.today()
+        intensity_level = 'normal'
+
+        employees = self.search([('active', '=', True)])
+        for emp in employees:
+            emp._generate_attendance_records(
+                start_date=start_date,
+                end_date=end_date,
+                intensity_level=intensity_level
+            )
+
+    # cron job method: last 30 days , normal intensity
+    def cron_generate_attendance_monthly(self):
+
+        start_date = fields.Date.today() - timedelta(days=30)
+        end_date = fields.Date.today()
+        intensity_level = 'normal'
+
+        employees = self.search([('active', '=', True)])
+        for emp in employees:
+            emp._generate_attendance_records(
+                start_date=start_date,
+                end_date=end_date,
+                intensity_level=intensity_level
+            )

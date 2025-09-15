@@ -3,7 +3,7 @@
     "version": "18.0.1.0.0",
     "summary": "Practice all Odoo action types",
     "author": "Mahmoud Hashem",
-    "license": "LGPL-3",
+
     "depends": ["base", "web"],
 
 

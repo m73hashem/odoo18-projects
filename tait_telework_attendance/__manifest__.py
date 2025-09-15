@@ -19,8 +19,7 @@
         'views/attendance_generation_wizard_views.xml',
         'views/hr_employee_views.xml',
         'views/hr_attendance_views.xml',
-        
-         
+        'data/ir_cron.xml',
         
     ],
 

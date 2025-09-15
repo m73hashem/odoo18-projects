@@ -1,0 +1,23 @@
+<odoo>
+    <!-- Weekly Cron Job -->
+    <record id="ir_cron_generate_attendance_weekly" model="ir.cron">
+        <field name="name">Weekly Attendance Generation</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_generate_attendance_weekly()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">weeks</field>
+        <field name="active">True</field>
+    </record>
+
+    <!-- Monthly Cron Job -->
+    <record id="ir_cron_generate_attendance_monthly" model="ir.cron">
+        <field name="name">Monthly Attendance Generation</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_generate_attendance_monthly()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field name="active">True</field>
+    </record>
+</odoo>
