@@ -1,0 +1,43 @@
+# ملفات Python المؤقتة
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+
+# بيئة التطوير (PyCharm, VSCode, وغيرها)
+.idea/
+.vscode/
+*.iml
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+
+# ملفات Odoo غير الضرورية
+*.log
+*.pot
+*.swp
+*.tmp
+
+# قواعد البيانات وملفات الجلسات
+*.db
+*.dbf
+*.sql
+*.sqlite3
+
+# النسخ الاحتياطية والأرشيفات
+*.zip
+*.tar.gz
+*.tar
+*.bak
+
+# حزم Python الافتراضية
+venv/
+.env/
+.env.local
+.env.*.local
+
+# وحدات Odoo المستبعدة مؤقتًا (أضف أي مشروع لا تريد رفعه هنا)
+
+project_name/
