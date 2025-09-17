@@ -1,0 +1,46 @@
+<odoo>
+    <record id="view_weather_wizard_form" model="ir.ui.view">
+        <field name="name">weather.wizard.form</field>
+        <field name="model">weather.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Weather Lookup">
+                <group>
+
+                    <field name="city"/>
+                    <field name="temperature"/>
+                    <field name="description"/>
+                </group>
+                <footer>
+                    <button name="action_get_weather" type="object" string="Get Weather" class="btn-primary"/>
+                    <button name="action_save_weather" type="object" string="Save Record" class="btn-success"/>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action Wizard -->
+    <record id="action_weather_wizard" model="ir.actions.act_window">
+        <field name="name">Weather Lookup</field>
+        <field name="res_model">weather.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_weather_root" name="Weather"/>
+
+
+    <menuitem id="menu_weather_history"
+              name="Weather History"
+              parent="menu_weather_root"
+              action="action_weather_history"
+              sequence="10" />
+
+        <menuitem id="menu_weather_wizard"
+              name="Check Weather"
+              parent="menu_weather_root"
+              action="action_weather_wizard"
+              sequence="20" />
+
+</odoo>

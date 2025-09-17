@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_weather_integration,access_weather_integration,model_weather_integration,,1,1,1,1
+access_weather_wizard,access_weather_wizard,model_weather_wizard,,1,1,1,1
+access_weather_config,access_weather_config,model_weather_config,,1,1,1,1
+
