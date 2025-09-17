@@ -1,10 +1,10 @@
 <odoo>
-    <!-- القائمة الرئيسية -->
+    <!-- main menu  -->
     <menuitem id="menu_project_expense_root"
               name="Project Expenses"
               sequence="10"/>
 
-    <!-- الإجراء -->
+    <!-- action -->
     <record id="action_project_expense_report" model="ir.actions.act_window">
         <field name="name">Project Expenses</field>
         <field name="res_model">project.project</field>
@@ -13,7 +13,7 @@
         <field name="domain">[]</field>
     </record>
 
-    <!-- ربط القائمة بالإجراء -->
+    <!-- connect the menu with action -->
     <menuitem id="menu_project_expense_report"
               name="Project Expense Report"
               parent="menu_project_expense_root"

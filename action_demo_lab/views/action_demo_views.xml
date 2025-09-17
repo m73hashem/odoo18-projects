@@ -66,7 +66,7 @@
         </field>
     </record>
 
-    <!-- Calendar View (تستخدم name فقط كتجربة) -->
+    <!-- Calendar View (use 'name' for test only) -->
     <record id="view_action_demo_item_calendar" model="ir.ui.view">
         <field name="name">action.demo.item.calendar</field>
         <field name="model">action.demo.item</field>

@@ -35,7 +35,7 @@ class ProjectExpenseRequest(models.Model):
         if vals.get('name', 'New') == 'New':
             vals['name'] = self.env['ir.sequence'].next_by_code('project.expense.request') or 'New'
 
-        # تعيين المدير عند الإنشاء
+        # choose manager when creating
         if vals.get('project_id') and not vals.get('manager_id'):
             project = self.env['project.project'].browse(vals['project_id'])
             if project.user_id:
@@ -48,7 +48,7 @@ class ProjectExpenseRequest(models.Model):
             if rec.state in ['done', 'cancel'] and 'state' not in vals:
                 raise ValidationError("You cannot modify a request in Done or Cancel state.")
 
-            # تحديث المدير إذا تغيّر المشروع
+            # update the manager when changing the project
             if 'project_id' in vals:
                 project = self.env['project.project'].browse(vals['project_id'])
                 if project.user_id:
@@ -85,7 +85,7 @@ class ProjectExpenseRequest(models.Model):
             if rec.state != 'approved':
                 raise ValidationError("Only approved requests can be marked as done.")
 
-            # تحديث قيمة المصاريف في المشروع بشكل آمن
+            # update expense total in the project
             new_total = rec.project_id.expense_total + rec.total_amount
             rec.project_id.write({'expense_total': new_total})
 

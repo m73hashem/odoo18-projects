@@ -19,10 +19,3 @@
     </record>
 
 </odoo>
-
-<!-- كانت مضافة في نهاية الكود ولكن تم استخدام ملف مستقل لكل ال menuitem
-    <menuitem
-            id="menu_project_expenses_root1"
-            name="Project Expenses11"
-            parent="project.menu_projects"
-            action="action_project_expenses_kanban" /> --> <!--groups="project_expenses.group_expense_manager, base.group_system"-->

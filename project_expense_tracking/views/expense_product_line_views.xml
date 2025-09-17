@@ -4,7 +4,7 @@
         <field name="model">project.expense.request.product.line</field>
         <field name="arch" type="xml">
             <form>
-                <group string="qwwwwwwww">
+                <group string="title for testing">
                     <field name="product_id"/>
                     <field name="quantity"/>
                 </group>

@@ -72,17 +72,5 @@
             <p class="o_view_nocontent_smiling_face">Create a new expense request</p>
         </field>
     </record>
-<!--
-    <menuitem
-            id="menu_project_expense_roota"
-            name="Project Expenses0110"
-            parent="project.menu_projects"
-            sequence="60"/>
-
-    <menuitem id="menu_project_expense_requests"
-              name="Expense Requests010"
-              parent="menu_project_expense_roota"
-              action="action_project_expense_requests" />
--->
 
 </odoo>

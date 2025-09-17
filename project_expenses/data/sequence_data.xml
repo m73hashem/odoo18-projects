@@ -2,7 +2,7 @@
     <data  noupdate="1"> <!-- noupdate="1": يمنع إعادة تعيين الرقم عند تحديث الموديول.-->
         <record id="seq_project_expense_request" model="ir.sequence">
             <field name="name">Project Expense Request</field>
-            <field name="code">project.expense.request.seq</field> <!-- code: يربط بين السجل والكود الذي تستدعيه في Python يجب ان يكون unique -->
+            <field name="code">project.expense.request.seq</field> <!--"code" is a unique id used to connect the record and the code called in python -->
             <field name="prefix">EXP/%(year)s/</field> <!--prefix: يمكن أن يحتوي على متغيرات زمنية (%(year)s, %(month)s, إلخ) -->
             <field name="padding">4</field>
             <field name="number_next">1</field>
@@ -10,3 +10,4 @@
         </record>
     </data>
 </odoo>
+

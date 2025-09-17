@@ -7,5 +7,5 @@ export class MyClientAction extends Component {
     static template = "action_demo_lab.mytemp123";
 }
 
-// تسجيل الـ Client Action في الريجيستري
+// dd the Client Action in registry
 registry.category("actions").add("event_dashboard.dashboard", MyClientAction);

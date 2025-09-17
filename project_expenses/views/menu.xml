@@ -1,5 +1,5 @@
 <odoo>
-    <!--00 الجذر الرئيسي -->
+    <!--root menu -->
     <menuitem
         id="menu_project_expense_root"
         name="Project Expenses"
@@ -7,7 +7,7 @@
 
     />
 
-    <!-- قائمة أنواع المصاريف 0-->
+    <!-- expense type menu-->
     <menuitem
         id="menu_project_expense_type"
         name="Expense Types"
@@ -16,7 +16,7 @@
         sequence="10"
     />
 
-    <!--0 قائمة طلبات المصاريف -->
+    <!--expense request menu -->
     <menuitem
         id="menu_project_expense_requests"
         name="Expense Requests"
@@ -25,7 +25,7 @@
         sequence="20"
     />
 
-    <!-- قائمة عرض المشاريع مع المصاريف 0..-->
+    <!--list projects and its expenses-->
     <menuitem
         id="menu_project_expenses_kanban"
         name="Projects Expenses Overview"
@@ -34,7 +34,7 @@
         sequence="30"
     />
 
-    <!-- قائمة معالج التقرير -->
+    <!-- for reports -->
     <menuitem
         id="menu_wizard_project_expenses"
         name="Project Expenses Report"

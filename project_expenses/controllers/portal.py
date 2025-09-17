@@ -11,7 +11,7 @@ class ProjectExpensesPortal(http.Controller):
 
     @http.route(['/project_expenses/portal/submit'], type='http', auth='user', methods=['POST'], website=True, csrf=True)
     def portal_submit_expense(self, **post):
-        # التحقق من المدخلات
+        # check inputs
         project_id = post.get('project_id')
         expense_type_id = post.get('expense_type')
         amount_str = post.get('amount')
@@ -31,13 +31,13 @@ class ProjectExpensesPortal(http.Controller):
         if not project or project.user_id.id != request.env.user.id:
             return request.redirect('/project_expenses/portal/new?error=You+are+not+the+project+manager')
 
-        # إنشاء طلب المصروف
+        # create expense order
         req = request.env['project.expense.request'].sudo().create({
             'project_id': int(project_id),
             'project_manager_id': request.env.user.id,
         })
 
-        # إضافة السطر
+        # add line
         request.env['project.expense.request.line'].sudo().create({
             'request_id': req.id,
             'expense_type_id': int(expense_type_id),

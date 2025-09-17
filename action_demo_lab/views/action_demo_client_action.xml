@@ -1,11 +1,11 @@
 <odoo>
-    <!-- تعريف Client Action -->
+    <!--   Client Action -->
     <record id="dashboard_ir_actions_client" model="ir.actions.client">
         <field name="name">Dashboards</field>
-        <field name="tag">event_dashboard.dashboard</field> <!-- مهم يكون مطابق مع registry -->
+        <field name="tag">event_dashboard.dashboard</field> <!-- the same value in registry -->
     </record>
 
-    <!-- منيو يفتح Client Action -->
+    <!-- menu to open Client Action -->
     <menuitem id="advanced_dashboard_menu"
               name="Client dashboard"
               parent="menu_action_demo_root"

@@ -4,7 +4,7 @@ from odoo.http import request
 
 class TestPublicPortalController(http.Controller):
 
-    # صفحة عرض المشاريع
+    # page to show the projects
     @http.route('/show/projects', type='http', auth='public', website=True)
     def projects_portal(self, **kwargs):
         projects = request.env['project.project'].sudo().search([('active', '=', True)])
