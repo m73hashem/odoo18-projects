@@ -1,43 +1,94 @@
-# ملفات Python المؤقتة
-*.pyc
-*.pyo
-*.pyd
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.egg-info/
+*.py[cod]
+*$py.class
 
-# بيئة التطوير (PyCharm, VSCode, وغيرها)
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.env/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Environments
+.env
+.envrc
+*.env
+*.ini
+
+# IDEs and editors
 .idea/
 .vscode/
-*.iml
-
-# ملفات النظام
-.DS_Store
-Thumbs.db
-
-# ملفات Odoo غير الضرورية
-*.log
-*.pot
 *.swp
-*.tmp
+*.swo
 
-# قواعد البيانات وملفات الجلسات
+# Odoo specific
+*.pot
+*.mo
+*.log
+*.xlsx
+*.csv
+*.pyo
+*.pyd
 *.db
-*.dbf
-*.sql
-*.sqlite3
-
-# النسخ الاحتياطية والأرشيفات
+*.sqlite
 *.zip
 *.tar.gz
-*.tar
-*.bak
 
-# حزم Python الافتراضية
-venv/
-.env/
-.env.local
-.env.*.local
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# وحدات Odoo المستبعدة مؤقتًا (أضف أي مشروع لا تريد رفعه هنا)
-
-project_name/
+# Custom Odoo folders
+.odoo/
+.mypy_cache/
