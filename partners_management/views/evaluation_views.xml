@@ -1,0 +1,47 @@
+<odoo>
+    <record id="view_partner_evaluation_list" model="ir.ui.view">
+        <field name="name">partner.evaluation.list</field>
+        <field name="model">partner.evaluation</field>
+        <field name="groups_id" eval="[(4, ref('partners_management.group_partner_manager'))]"/>
+        <field name="arch" type="xml">
+            <list>
+                <field name="partner_id"/>
+                <field name="evaluation_date"/>
+                <field name="score"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_partner_evaluation_form" model="ir.ui.view">
+        <field name="name">partner.evaluation.form</field>
+        <field name="model">partner.evaluation</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="evaluation_date"/>
+                        <field name="criteria"/>
+                        <field name="score"/>
+                        <field name="comments"/>
+                    </group>
+                </sheet>
+
+                <!-- Chatter -->
+                <chatter/>
+
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_evaluation" model="ir.actions.act_window">
+        <field name="name">Evaluations</field>
+        <field name="res_model">partner.evaluation</field>
+        <field name="view_mode">form,list</field>
+        <field name="view_id" ref="view_partner_evaluation_list"/>
+        <field name="context">{'group_by': 'partner_id'}</field>
+    </record>
+
+
+</odoo>

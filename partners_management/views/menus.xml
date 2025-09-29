@@ -1,0 +1,20 @@
+<odoo>
+    <menuitem id="menu_partner_root" name="Partners Management" sequence="10"/>
+
+    <menuitem id="menu_partner_main"
+              name="Partners"
+              parent="menu_partner_root"
+              action="action_partner"
+              sequence="1"/>
+
+    <menuitem id="menu_plan_main" 
+              name="Plans" 
+              parent="menu_partner_root" 
+              action="action_plan" sequence="2"/>
+    
+    <menuitem id="menu_evaluation_main" name="Evaluations" parent="menu_partner_root" 
+              action="action_evaluation" sequence="3"/>
+    
+    <menuitem id="menu_activity_main" name="Activities" parent="menu_partner_root" 
+              action="action_activity" sequence="4"/>
+</odoo>

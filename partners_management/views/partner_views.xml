@@ -1,0 +1,167 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">partner.form</field>
+        <field name="model">custom.partner</field>
+        <field name="groups_id" eval="[(4, ref('partners_management.group_partner_manager'))]"/>
+        <field name="arch" type="xml">
+            <form string="Partner">
+
+                <sheet>
+                        <!-- Smart Buttons -->
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_plans" type="object" class="oe_stat_button" icon="fa-tasks">
+                                <field name="plan_count" widget="statinfo"/>
+                            </button>
+                            <button name="action_view_evaluations" type="object" class="oe_stat_button" icon="fa-star">
+                                <field name="evaluation_count" widget="statinfo"/>
+                            </button>
+                            <button name="action_view_activities" type="object" class="oe_stat_button" icon="fa-calendar">
+                                <field name="activity_count" widget="statinfo"/>
+                            </button>
+                        </div>
+
+                        <group>
+                            <field name="company_logo" widget="image"
+                                       class="oe_avatar"
+                                       nolabel="1"
+                                       options="{'preview_image': 'company_logo'}"/>
+
+                            <field name="name"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="partnership_duration"/>
+                            <field name="website_url"/>
+                            <field name="country"/>
+                            <field name="partner_type"/>
+                            <field name="responsible_user_id"/>
+
+                        </group>
+
+
+                    <!-- Pages -->
+                    <notebook>
+                        <page string="Plans">
+                            <field name="plan_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="year"/>
+                                    <field name="approved"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Evaluations">
+                            <field name="evaluation_ids">
+                                <list editable="bottom">
+                                    <field name="evaluation_date"/>
+                                    <field name="score"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Activities">
+                            <field name="custom_activity_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="status"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Attachments">
+                            <field name="custom_attachment_ids" widget="many2many_binary"/>
+
+                        </page>
+
+                    </notebook>
+                </sheet>
+
+                <!-- Chatter -->
+                <chatter/>
+
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_custom_partner_kanban" model="ir.ui.view">
+        <field name="name">custom.partner.kanban</field>
+        <field name="model">custom.partner</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="name"/>
+                <field name="partnership_duration"/>
+                <field name="website_url"/>
+                <field name="company_logo"/>
+                <field name="end_date"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="o_kanban_record">
+
+                            <!-- Logo -->
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('custom.partner', 'company_logo', record.id.value)"
+                                     alt="Logo" class="rounded-lg"
+                                     style="max-height:80px; max-width:80px;" />
+                            </div>
+
+                            <!-- Partner Info -->
+                            <div class="o_kanban_details">
+                                <!-- Name -->
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+
+                                <!-- Partnership Duration -->
+                                <div>
+                                    <span>Duration: </span>
+                                    <field name="partnership_duration"/>
+                                </div>
+
+                                <!-- End Date -->
+                                <t t-if="record.end_date.value">
+                                    <t t-if="new Date(record.end_date.value).getTime() &lt; new Date()">
+                                        <div style="color:red;">
+                                            <b>End:</b> <field name="end_date"/>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div><b>End:</b> <field name="end_date"/></div>
+                                    </t>
+                                </t>
+
+
+                                <!-- Website -->
+                                <t t-if="record.website_url.value">
+                                    <a t-att-href="record.website_url.value" target="_blank"
+                                       class="btn btn-primary btn-sm mt-2">
+                                        Visit Website
+                                    </a>
+                                </t>
+                                <t t-else="">
+                                    <div style="color: gray; font-size: 12px; margin-top:6px;">
+                                        No Website
+                                    </div>
+                                </t>
+
+                            </div>
+
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_partner" model="ir.actions.act_window">
+        <field name="name">Partners</field>
+        <field name="res_model">custom.partner</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+</odoo>
