@@ -1,5 +1,6 @@
-from odoo import models, fields, api, _
+from odoo import models, fields, _
 from odoo.exceptions import UserError
+
 
 class AttendanceGenerationWizard(models.TransientModel):
     _name = "attendance.generation.wizard"
@@ -21,6 +22,7 @@ class AttendanceGenerationWizard(models.TransientModel):
         for emp in employees:
             emp._generate_attendance_records(
                 start_date=self.date_from,
-                end_date=self.date_to
+                end_date=self.date_to,
+                intensity_level=self.intensity_level
             )
         return {'type': 'ir.actions.act_window_close'}
