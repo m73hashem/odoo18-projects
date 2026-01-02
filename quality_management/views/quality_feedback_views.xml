@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_quality_feedback_list" model="ir.ui.view">
+        <field name="name">quality.feedback.list</field>
+        <field name="model">quality.feedback</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="course_id"/>
+                <field name="survey_score"/>
+                <field name="sentiment"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_quality_feedback_form" model="ir.ui.view">
+        <field name="name">quality.feedback.form</field>
+        <field name="model">quality.feedback</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="course_id"/>
+                        <field name="survey_score"/>
+                        <field name="feedback_text"/>
+                        <field name="sentiment"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_quality_feedback" model="ir.actions.act_window">
+        <field name="name">Feedback</field>
+        <field name="res_model">quality.feedback</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

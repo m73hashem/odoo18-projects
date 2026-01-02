@@ -1,0 +1,114 @@
+<odoo>
+    <record id="view_partnership_plan_list" model="ir.ui.view">
+        <field name="name">partnership.plan.list</field>
+        <field name="model">partnership.plan</field>
+        <field name="groups_id" eval="[(4, ref('partners_management.group_partner_manager'))]"/>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state"/>
+                <field name="activity_count"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="view_partnership_plan_form" model="ir.ui.view">
+        <field name="name">partnership.plan.form</field>
+        <field name="model">partnership.plan</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+
+                <!-- Statusbar -->
+                <field name="state" widget="statusbar"
+                       statusbar_visible="draft,in_progress,done"/>
+
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!-- Smart button for activities -->
+                <button name="action_view_activities" type="object" class="oe_stat_button" icon="fa-tasks">
+        <field name="activity_count" widget="statinfo" string="Activities"/>
+    </button>
+                    </div>
+
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="name"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="objectives"/>
+
+                    </group>
+                    <notebook>
+                        <page string="Activities">
+                            <group>
+                                <field name="activities_ids"/>
+                            </group>
+                        </page>
+                    <!-- page to modify partner info -->
+                        <page string="Partner Details">
+                            <group>
+                                <field name="partner_id"
+           context="{'form_view_ref': 'partners_management.view_partner_form'}" options="{'no_create': True}" />
+                            </group>
+                        </page>
+
+                </notebook>
+                </sheet>
+             
+                <!-- Chatter -->
+                <chatter/>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="partnership_plan_view_search" model="ir.ui.view">
+        <field name="name">partnership.plan.view.search</field>
+        <field name="model">partnership.plan</field>
+        <field name="arch" type="xml">
+            <search string="Partnership Plans">
+                <!-- SEARCH FIELDS -->
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="activity_count"/>
+                <field name="plan_progress"/>
+
+                <!-- STATE FILTERS -->
+                <filter string="Draft" name="state_draft" domain="[('state','=','draft')]"/>
+                <filter string="In Progress" name="state_in_progress" domain="[('state','=','in_progress')]"/>
+                <filter string="Done" name="state_done" domain="[('state','=','done')]"/>
+
+                <!-- BUSINESS FILTERS -->
+                <filter string="With Activities" name="with_activities" domain="[('activity_count','>',0)]"/>
+
+                <!-- GROUP BY -->
+                <group expand="0" string="Group By">
+                    <filter string="Partner" name="group_partner" context="{'group_by':'partner_id'}"/>
+                    <filter string="Status" name="group_state" context="{'group_by':'state'}"/>
+                    <filter string="Start Date" name="group_start_date" context="{'group_by':'start_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <!-- Action -->
+    <record id="action_plan" model="ir.actions.act_window">
+        <field name="name">plans</field>
+        <field name="res_model">partnership.plan</field>
+        <field name="view_mode">form,list</field>
+        <field name="view_id" ref="view_partnership_plan_list"/>
+        <field name="context">{'group_by': 'partner_id'}</field>
+    </record>
+
+
+
+</odoo>

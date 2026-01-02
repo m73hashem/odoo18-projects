@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+
+        <!-- مدير النظام -->
+        <record id="group_graduate_system_manager" model="res.groups">
+            <field name="name">Graduate System Manager</field>
+            <field name="category_id" ref="graduate_relations.graduate_relations_category"/>
+        </record>
+
+        <!--  خريج -->
+        <record id="group_graduate_user" model="res.groups">
+            <field name="name">Graduate</field>
+            <field name="category_id" ref="graduate_relations.graduate_relations_category"/>
+        </record>
+
+        <!--  مسؤول خريجين -->
+        <record id="group_graduate_officer" model="res.groups">
+            <field name="name">Graduate Officer</field>
+            <field name="category_id" ref="graduate_relations.graduate_relations_category"/>
+        </record>
+
+        <!-- مشرف عام -->
+        <record id="group_graduate_supervisor" model="res.groups">
+            <field name="name">General Supervisor</field>
+            <field name="category_id" ref="graduate_relations.graduate_relations_category"/>
+        </record>
+
+    </data>
+</odoo>

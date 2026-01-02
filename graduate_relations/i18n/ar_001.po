@@ -1,0 +1,838 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* graduate_relations
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-01 18:01+0000\n"
+"PO-Revision-Date: 2026-01-01 18:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_training_graduate_kanban
+msgid "<i class=\"fa fa-file-text\"/> CV"
+msgstr "<i class=\"fa fa-file-text\"/> السيرة الذاتية"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_training_graduate_kanban
+msgid "<i class=\"fa fa-graduation-cap\"/> Courses"
+msgstr "<i class=\"fa fa-graduation-cap\"/> الدورات التدريبية"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "<i class=\"fa fa-plus\"/> إضافة خبرة جديدة"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "<i class=\"fa fa-plus\"/> إضافة لغة جديدة"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "<i class=\"fa fa-plus\"/> إضافة مهارة جديدة"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "<i class=\"fa fa-undo\"/> تراجع عن الحذف"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid ""
+"<small class=\"text-muted d-block mb-2\">يمكنك رفع عدة ملفات (PDF، صور، "
+"Word...)</small>"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_graduates_kanban
+msgid "<span class=\"text-muted\">e-mail: </span>"
+msgstr "<span class=\"text-muted\">البريد الالكتروني: </span>"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_add_link_to_my1
+msgid "<span>Graduate Relations</span>"
+msgstr "<span>علاقات الخريجين</span>"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_add_link_to_my1
+msgid "Access your Information"
+msgstr "الوصول الى معلوماتك"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__attachment_ids
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__attachment_ids
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__attachment_ids
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_graduate_cv_form
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_send_graduate_email_wizard
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_experience__exp_name
+msgid "Company Name"
+msgstr "اسم الشركة"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_courses__course_id
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__course_id
+msgid "Course"
+msgstr "الدورة التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_courses__course_name
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__name
+msgid "Course Name"
+msgstr "اسم الدورة التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__course_ids
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_training_graduate_form
+msgid "Courses"
+msgstr "الدورات التدريبية"
+
+#. module: graduate_relations
+#: model:ir.actions.server,name:graduate_relations.cron_create_training_graduates_ir_actions_server
+msgid "Create Graduates from Partners"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__create_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_experience__create_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_package_line__create_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_skill__create_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_user_language__create_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__create_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__create_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__create_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__create_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__create_uid
+msgid "Created by"
+msgstr "تم انشاؤه بواسطة"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__create_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_experience__create_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_package_line__create_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_skill__create_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_user_language__create_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__create_date
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__create_date
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__create_date
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__create_date
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_courses__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_experience__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_package_line__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_relation__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_skill__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_user_language__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__display_name
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.constraint,message:graduate_relations.constraint_graduate_cv_unique_graduate_id
+msgid "Each graduate can have only one CV."
+msgstr "كل خريج له سيرة ذاتية واحدة فقط"
+
+#. module: graduate_relations
+#: model:ir.model.constraint,message:graduate_relations.constraint_graduates_unique_partner_id
+msgid "Each trainee can only appear once in the graduates Archive."
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__education
+msgid "Education"
+msgstr "التعليم"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_relation__email
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__email
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__email
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__email
+msgid "Email"
+msgstr "البريد الالكتروني"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__body
+msgid "Email Body"
+msgstr "محتوى البريد"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__subject
+msgid "Email Subject"
+msgstr "عنوان البريد"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__end_date
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_event_event
+msgid "Event"
+msgstr "الفعالية"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__event_ids
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_training_graduate_form
+msgid "Events"
+msgstr "الفعاليات"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__experience_ids
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_graduate_cv_form
+msgid "Experiences"
+msgstr "الخبرات"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: graduate_relations
+#: model:res.groups,name:graduate_relations.group_graduate_supervisor
+msgid "General Supervisor"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__graduate_id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_package_line__graduate_id
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__partner_id
+#: model:res.groups,name:graduate_relations.group_graduate_user
+msgid "Graduate"
+msgstr "خريج"
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_graduate_cv
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_experience__graduate_cv_id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_skill__graduate_cv_id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_user_language__graduate_cv_id
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_graduate_cv_form
+msgid "Graduate CV"
+msgstr "السيرة الذاتية"
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_graduate_experience
+msgid "Graduate Experience"
+msgstr "الخبرة"
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_graduate_user_language
+msgid "Graduate Language"
+msgstr "اللغة"
+
+#. module: graduate_relations
+#: model:res.groups,name:graduate_relations.group_graduate_officer
+msgid "Graduate Officer"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.module.category,name:graduate_relations.graduate_relations_category
+#: model:ir.ui.menu,name:graduate_relations.menu_graduates_root
+msgid "Graduate Relations"
+msgstr "علاقات الخريجين"
+
+#. module: graduate_relations
+#: model:ir.module.category,description:graduate_relations.graduate_relations_category
+msgid "Graduate Relations access groups"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_graduate_skill
+msgid "Graduate Skill"
+msgstr "المهارات"
+
+#. module: graduate_relations
+#: model:res.groups,name:graduate_relations.group_graduate_system_manager
+msgid "Graduate System Manager"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.actions.act_window,name:graduate_relations.action_graduate_list
+#: model:ir.actions.act_window,name:graduate_relations.action_training_graduate
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__graduate_ids
+#: model:ir.ui.menu,name:graduate_relations.menu_training_graduate
+msgid "Graduates"
+msgstr "الخريجون"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_courses__graduate_count
+msgid "Graduates Count"
+msgstr "عدد الخريجين"
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_graduate_relation
+msgid "Graduates Relation"
+msgstr "علاقات الخريجين"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_courses__id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_experience__id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_package_line__id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_relation__id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_skill__id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_user_language__id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__id
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__id
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__id
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__id
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__id
+msgid "ID"
+msgstr "الرقم التعريفي"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__message_has_error
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_event_event__show_to_graduates
+msgid "If checked, this event will be visible to all graduates."
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_user_language__name
+msgid "Language"
+msgstr "اللغة"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__language_ids
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__language
+msgid "Languages"
+msgstr "اللغات"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__write_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_experience__write_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_package_line__write_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_skill__write_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_user_language__write_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__write_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__write_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__write_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__write_uid
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__write_uid
+msgid "Last Updated by"
+msgstr "اخر تحديث بواسطة"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__write_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_experience__write_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_package_line__write_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_skill__write_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_user_language__write_date
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__write_date
+#: model:ir.model.fields,field_description:graduate_relations.field_send_graduate_email_wizard__write_date
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__write_date
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__write_date
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__mobile
+msgid "Mobile"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__name
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_relation__name
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__national_id
+msgid "National ID"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__trainee_count
+msgid "Number of Courses"
+msgstr "عدد الدورات التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_package_line__package_name
+msgid "Package Name"
+msgstr "الحقيبة التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__partner_id
+msgid "Participant"
+msgstr "المشارك"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__participant_ids
+msgid "Participants"
+msgstr "المشاركون"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_relation__partner_id
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_add_link_to_my1
+msgid "Partner & Security"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_relation__phone
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__phone
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__phone
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__phone
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_course_participant__role
+msgid "Role"
+msgstr "الوظيفة"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_send_graduate_email_wizard
+msgid "Send"
+msgstr "إرسال"
+
+#. module: graduate_relations
+#: model:ir.actions.act_window,name:graduate_relations.action_open_send_graduate_email_wizard
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_send_graduate_email_wizard
+msgid "Send Email to Graduates"
+msgstr "إرسال بريد إلكتروني إلى الخريجين"
+
+#. module: graduate_relations
+#: model:ir.actions.server,name:graduate_relations.server_action_send_email
+msgid "Send Email to Selected Graduates"
+msgstr "إرسال بريد إلكتروني إلى الخريجين المختارين"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_skill__name
+msgid "Skill"
+msgstr "المهارة"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_cv__skill_ids
+msgid "Skills"
+msgstr "المهارات"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__start_date
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.constraint,message:graduate_relations.constraint_training_graduate_unique_partner
+msgid "This graduate already exists!"
+msgstr "هذا الخريج موجود بالفعل"
+
+#. module: graduate_relations
+#: model:ir.model.constraint,message:graduate_relations.constraint_training_course_participant_unique_course_partner
+msgid "This participant is already added to the course!"
+msgstr "مضاف بالفعل الى الدورة التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model.fields.selection,name:graduate_relations.selection__training_course_participant__role__trainee
+msgid "Trainee"
+msgstr "متدرب"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__trainee_count
+msgid "Trainees"
+msgstr "متدربون"
+
+#. module: graduate_relations
+#: model:ir.model.fields.selection,name:graduate_relations.selection__training_course_participant__role__trainer
+msgid "Trainer"
+msgstr "مدرب"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_courses__trainer_count
+msgid "Trainers"
+msgstr "مدربون"
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_training_courses
+msgid "Training Course"
+msgstr "الدورات التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_training_course_participant
+msgid "Training Course Participant"
+msgstr "عضو الدورة التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_training_graduate
+msgid "Training Graduate"
+msgstr "الخريج"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_package_line__package_id
+#: model:ir.model.fields,field_description:graduate_relations.field_graduate_relation__package_id
+msgid "Training Package"
+msgstr "الدورة التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__package_line_ids
+msgid "Training Packages"
+msgstr "الدورات التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_graduate_courses
+msgid "Unique Graduate Courses"
+msgstr "الدورات الفريدة"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_graduates__partner_id
+msgid "User"
+msgstr "مستخدم"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_training_graduate_form
+msgid "View CV"
+msgstr "عرض السيرة الذاتية"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_graduates_form
+msgid "View Packages"
+msgstr "عرض الحقائب التدريبية"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_event_event__show_to_graduates
+msgid "Visible to Graduates"
+msgstr "متاح للخريج"
+
+#. module: graduate_relations
+#: model:ir.model.fields,field_description:graduate_relations.field_training_graduate__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model.fields,help:graduate_relations.field_training_graduate__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_send_graduate_email_wizard
+msgid "Wizard to Send Email to Graduates"
+msgstr ""
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_graduate_package_line
+msgid "graduate Training Package Line"
+msgstr "سجل الحقائب التدريبية للخريج"
+
+#. module: graduate_relations
+#: model:ir.model,name:graduate_relations.model_graduates
+msgid "graduates Archive"
+msgstr "أرشيف الخريجين"
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "أدخل خبرة جديدة"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "أدخل لغة جديدة"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "أدخل مهارة جديدة"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_my_graduate_main
+msgid "استخدم اللوحة أدناه للتنقل داخل بوابة الخريجين."
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "الاسم"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "البريد الإلكتروني"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "التعليم"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "الخبرة العملية"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.view_graduates_form
+msgid "الدورات"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "اللغات"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "المرفقات (الشهادات / الوثائق)"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "المهارات"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "رقم الهاتف"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_my_trainings
+msgid "لا توجد دورات تدريبية حتى الآن."
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "لا توجد مرفقات حالياً."
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "لم تقم بإضافة ملفات بعد."
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "نموذج السيرة الذاتية"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_no_graduate
+msgid "يرجى التواصل مع الإدارة لتحديث بياناتك."
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "↩️ استعادة المحذوفين"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_my_graduate_main
+msgid "🎓 مرحباً"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_my_graduate_main
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_my_trainings
+msgid "🏠 الصفحة الرئيسية"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_graduate_cv_view
+msgid "💾 حفظ"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_my_graduate_main
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_my_trainings
+msgid "📄 سيرتي الذاتية"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_my_graduate_main
+msgid "📘 الدورات التدريبية"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_my_trainings
+msgid "📘 الدورات التدريبية الخاصة بك"
+msgstr ""
+
+#. module: graduate_relations
+#: model_terms:ir.ui.view,arch_db:graduate_relations.portal_no_graduate
+msgid "🚫 لا يوجد سجل خريج مرتبط بحسابك."
+msgstr ""

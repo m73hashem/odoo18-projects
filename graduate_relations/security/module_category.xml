@@ -1,0 +1,8 @@
+<odoo>
+    <data noupdate="0">
+        <record id="graduate_relations_category" model="ir.module.category">
+            <field name="name">Graduate Relations</field>
+            <field name="description">Graduate Relations access groups</field>
+        </record>
+    </data>
+</odoo>

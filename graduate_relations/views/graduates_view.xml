@@ -1,0 +1,122 @@
+<odoo>
+    <!-- list VIEW -->
+    <record id="view_graduates_list" model="ir.ui.view">
+        <field name="name">graduates.list</field>
+        <field name="model">graduates</field>
+        <field name="arch" type="xml">
+            <list>
+
+                <field name="name"/>
+
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_graduates_form" model="ir.ui.view">
+        <field name="name">graduates.form</field>
+        <field name="model">graduates</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_packages"
+                        type="object"
+                        string="View Packages"
+                        class="oe_stat_button"
+                        icon="fa-book">
+                                <field name="package_line_ids" widget="statinfo" string="الدورات"/>
+                        </button>
+
+<!--                        <button name="action_view_cv"-->
+<!--                                type="object"-->
+<!--                                string="View CV"-->
+<!--                                class="oe_stat_button"-->
+<!--                                icon="fa-file-text">-->
+<!--                        </button>-->
+
+
+<!--                            <button name="action_event" type="object"-->
+<!--                                    string="Events"-->
+<!--                                    class="oe_stat_button" icon="fa-flag">-->
+<!--                        &lt;!&ndash;   <field name="event_count" widget="statinfo"/>&ndash;&gt;-->
+<!--                            </button>-->
+
+                    </div>
+                    <group>
+                        <group>
+                                <field name="partner_id" options="{'no_create': True}" />
+                                <field name="name"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                        </group>
+                        <group>
+
+<!--                            <field name="language"/>-->
+
+                        </group>
+                    </group>
+
+                    <notebook>
+<!--                        <page string="Training Packages">-->
+<!--                            <field name="package_line_ids" nolabel="1">-->
+<!--                                <list>-->
+<!--                                    <field name="package_name"/>-->
+<!--                                    <field name="graduate_id" invisible="1"/>-->
+<!--                                </list>-->
+<!--                            </field>-->
+<!--                        </page>-->
+
+<!--                        <page string="مرفقات">-->
+<!--                            <field name="attachment_ids"/>-->
+<!--                        </page>-->
+<!--                        <page string="Attachments">-->
+<!--    <field name="attachment_ids" widget="many2many_binary"/>-->
+<!--</page>-->
+
+
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_graduates_kanban" model="ir.ui.view">
+        <field name="name">view.graduates.kanban</field>
+        <field name="model">graduates</field>
+        <field name="arch" type="xml">
+            <kanban  class="o_kanban_small_column">
+                <field name="name"/>
+                <field name="email"/>
+
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <strong><field name="name"/></strong>
+
+                            <div>
+                                <span class="text-muted">e-mail: </span>
+                                <field name="email"/>%
+                            </div>
+
+
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <!-- ACTION -->
+    <record id="action_graduate_list" model="ir.actions.act_window">
+        <field name="name">Graduates</field>
+        <field name="res_model">graduates</field>
+        <field name="view_mode">kanban,list,form</field>
+
+    </record>
+    
+
+</odoo>

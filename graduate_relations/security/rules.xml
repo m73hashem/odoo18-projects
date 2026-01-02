@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+
+        <!-- training_graduate-->
+        <record id="rule_training_graduate_user_own" model="ir.rule">
+            <field name="name">Graduate: Own Record</field>
+            <field name="model_id" ref="model_training_graduate"/>
+            <field name="groups" eval="[(4, ref('graduate_relations.group_graduate_user'))]"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+        </record>
+
+        <!--CV-->
+        <record id="rule_graduate_cv_user_own" model="ir.rule">
+            <field name="name">Graduate CV: Own</field>
+            <field name="model_id" ref="model_graduate_cv"/>
+            <field name="groups" eval="[(4, ref('graduate_relations.group_graduate_user'))]"/>
+            <field name="domain_force">[('graduate_id.user_id', '=', user.id)]</field>
+        </record>
+
+        <!-- graduate_relation -->
+        <record id="rule_graduate_relation_user_own" model="ir.rule">
+            <field name="name">Graduate Relation: Own</field>
+            <field name="model_id" ref="model_graduate_relation"/>
+            <field name="groups" eval="[(4, ref('graduate_relations.group_graduate_user'))]"/>
+            <field name="domain_force">[('graduate_id.user_id', '=', user.id)]</field>
+        </record>
+
+        <!-- graduate_courses-->
+        <record id="rule_graduate_courses_user_own" model="ir.rule">
+            <field name="name">Graduate Courses: Own</field>
+            <field name="model_id" ref="model_graduate_courses"/>
+            <field name="groups" eval="[(4, ref('graduate_relations.group_graduate_user'))]"/>
+            <field name="domain_force">[('graduate_id.user_id', '=', user.id)]</field>
+        </record>
+
+    </data>
+</odoo>

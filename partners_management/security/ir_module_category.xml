@@ -1,0 +1,9 @@
+<odoo>
+    <data noupdate="0">
+        <record id="partners_management_category" model="ir.module.category">
+            <field name="name">Partners Management</field>
+            <field name="description">Manage Partners</field>
+            <field name="sequence">10</field>
+        </record>
+    </data>
+</odoo>

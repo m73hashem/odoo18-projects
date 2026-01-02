@@ -1,0 +1,54 @@
+ <odoo>
+   <!-- 
+    <record id="view_graduate_course_unique_list" model="ir.ui.view">
+    <field name="name">graduate.course.unique.list</field>
+    <field name="model">graduate.courses</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="course_name"/>
+            <field name="graduate_count"/>
+        </tree>
+    </field>
+</record>
+
+<record id="view_graduate_course_unique_kanban" model="ir.ui.view">
+    <field name="name">graduate.course.unique.kanban</field>
+    <field name="model">graduate.courses</field>
+    <field name="arch" type="xml">
+        <kanban class="o_kanban_example">
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click card shadow-sm p-3">
+                        <div class="h5 text-primary">
+                            <field name="course_name"/>
+                        </div>
+                        <div>
+                            <span class="badge bg-info">
+                                <field name="graduate_count"/> Graduates
+                            </span>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
+
+<record id="action_graduate_courses_unique" model="ir.actions.act_window">
+    <field name="name">Graduate Courses</field>
+    <field name="res_model">graduate.courses</field>
+    <field name="view_mode">kanban,list</field>
+</record>
+
+
+
+
+    <menuitem id="menu_training_courses"
+              name="Graduate Courses (Cards)"
+              parent="menu_graduates_root"
+              action="action_graduate_courses_unique"
+              sequence="20"  />
+
+              -->
+</odoo> 

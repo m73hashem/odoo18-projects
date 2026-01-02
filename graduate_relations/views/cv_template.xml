@@ -1,0 +1,491 @@
+<odoo>
+<template id="portal_graduate_cv_view" name="Graduate CV Portal View">
+    <t t-call="website.layout">
+           <style>
+        body {
+                direction: rtl;
+                text-align: right;
+                font-family: "Cairo", "Tajawal", sans-serif;
+                background-color: #f9fafb;
+            }
+
+            .cv-container {
+                max-width: 700px;
+                margin: 40px auto;
+                background: #fff;
+                padding: 30px 40px;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .cv-container h1 {
+                font-size: 28px;
+                font-weight: 700;
+                color: #34495e;
+                margin-bottom: 25px;
+                text-align: center;
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 10px;
+            }
+
+            .cv-container label {
+                font-weight: 600;
+                color: #2c3e50;
+                display: block;
+                margin-bottom: 6px;
+                font-size: 15px;
+            }
+
+            .cv-container input,
+            .cv-container textarea {
+                width: 100%;
+                border: 1px solid #ced4da;
+                border-radius: 6px;
+                padding: 10px 12px;
+                font-size: 14px;
+                transition: all 0.2s ease;
+            }
+
+            .cv-container input:focus,
+            .cv-container textarea:focus {
+                border-color: #3498db;
+                box-shadow: 0 0 4px rgba(52,152,219,0.3);
+                outline: none;
+            }
+
+            .cv-container .form-group {
+                margin-bottom: 18px;
+            }
+
+            .cv-container button {
+                background-color: #3498db;
+                border: none;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                padding: 10px 30px;
+                border-radius: 6px;
+                transition: background 0.3s ease;
+            }
+
+            .cv-container button:hover {
+                background-color: #2d86c7;
+            }
+
+            /* ✅ قائمة الخبرات */
+            #experience_list {
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+
+            .experience-item, .language-item, .skill-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 8px;
+                transition: all 0.2s ease;
+            }
+
+            .experience-item:hover, .language-item:hover, .skill-item:hover {
+                background: #f1f1f1;
+                border-color: #bbb;
+                transform: scale(1.03);
+                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            .remove-experience, .remove-language, .remove-skill{
+                background-color: #dc3545 !important;
+                border: none;
+                color: #fff;
+                padding: 5px 9px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+
+            .remove-experience:hover, .remove-language:hover, .remove-skill:hover {
+                background-color: #b02a37;
+            }
+
+            #add_experience:hover {
+                background-color: #0069d9;
+            }
+
+            .file-upload {
+                border: 2px dashed #d0d7de;
+                border-radius: 8px;
+                padding: 20px;
+                text-align: center;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+
+            .file-upload:hover {
+                background: #f2f6fa;
+            }
+
+            .file-upload input[type=file] {
+                display: none;
+            }
+
+            .file-upload label {
+                font-size: 15px;
+                font-weight: 500;
+                color: #2980b9;
+                cursor: pointer;
+            }
+
+            .auto-expand {
+                overflow: hidden;
+                resize: none;
+                min-height: 35px;
+                max-height: 200px;
+                transition: height 0.2s ease;
+            }
+
+            @media (max-width: 768px) {
+                .cv-container {
+                    padding: 20px;
+                    margin: 20px;
+                }
+
+                .cv-container h1 {
+                    font-size: 22px;
+                }
+            }
+        </style>
+
+        <div class="cv-container container mt-5 mb-5">
+            <h1 class="text-center mb-4">نموذج السيرة الذاتية</h1>
+
+            <form action="/my/cv/submit" method="post" enctype="multipart/form-data"
+                  class="o_form shadow p-4 rounded bg-white">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <input type="hidden" name="graduate_id" t-att-value="graduate.id"/>
+
+                <div class="form-group mb-3">
+                    <label>الاسم</label>
+                    <input type="text" name="name" class="form-control"
+                           t-att-value="graduate.partner_id.name if graduate else ''"/>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>رقم الهاتف</label>
+                    <input type="text" name="phone" class="form-control"
+                           t-att-value="graduate.phone if (graduate and graduate.phone) else ''"/>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" name="email" class="form-control"
+                           t-att-value="graduate.email if (graduate and graduate.email) else ''"/>
+                </div>
+
+                <!-- education -->
+                <div class="form-group mb-3">
+                    <label>التعليم</label>
+                    <textarea name="education" class="form-control" rows="3"
+                              t-esc="cv.education or ''"/>
+                </div>
+
+                <!-- experience -->
+                <div class="form-group mb-3">
+                    <label>الخبرة العملية</label>
+                    <div id="experience_list">
+                        <t t-if="cv.experience_ids">
+                            <t t-foreach="cv.experience_ids" t-as="exp">
+                                <div class="experience-item">
+                                    <input type="text" name="experience_ids[]" class="form-control auto-expand"
+                                           t-att-value="exp.exp_name" placeholder="أدخل خبرة جديدة"/>
+                                    <button type="button" class="remove-experience"><i class="fa fa-trash"></i></button>
+                                </div>
+                            </t>
+                        </t>
+                    </div>
+                    <div class="mt-2 d-flex gap-2">
+                        <button type="button" id="add_experience" class="btn btn-secondary">
+                            <i class="fa fa-plus"></i> إضافة خبرة جديدة
+                        </button>
+                        <button type="button" id="undo_delete_experience" class="btn btn-warning">
+                            <i class="fa fa-undo"></i> تراجع عن الحذف
+                        </button>
+                    </div>
+                </div>
+
+                <!-- language -->
+                <div class="form-group mb-3">
+                    <label>اللغات</label>
+                    <div id="language_list">
+                        <t t-if="cv.language_ids">
+                            <t t-foreach="cv.language_ids" t-as="u_lang">
+                                <div class="language-item" >
+                                    <input type="text" name="language_ids[]" class="form-control auto-expand"
+                                           t-att-value="u_lang.name" placeholder="أدخل لغة جديدة"/>
+                                    <button type="button" class="remove-language"><i class="fa fa-trash"></i></button>
+                                </div>
+                            </t>
+                        </t>
+                    </div>
+                    <div class="mt-2 d-flex gap-2">
+                        <button type="button" id="add_language" class="btn btn-secondary">
+                            <i class="fa fa-plus"></i> إضافة لغة جديدة
+                        </button>
+                        <button type="button" id="undo_delete_language" class="btn btn-warning">
+                            <i class="fa fa-undo"></i> تراجع عن الحذف
+                        </button>
+                    </div>
+                </div>
+
+                <!-- skills -->
+                <div class="form-group mb-3">
+                    <label>المهارات</label>
+                    <div id="skill_list">
+                        <t t-if="cv.skill_ids">
+                            <t t-foreach="cv.skill_ids" t-as="skill">
+                                <div class="skill-item">
+                                    <input type="text" name="skill_ids[]" class="form-control auto-expand"
+                                           t-att-value="skill.name" placeholder="أدخل مهارة جديدة"/>
+                                    <button type="button" class="remove-skill"><i class="fa fa-trash"></i></button>
+                                </div>
+                            </t>
+                        </t>
+                    </div>
+                    <div class="mt-2 d-flex gap-2">
+                        <button type="button" id="add_skill" class="btn btn-secondary">
+                            <i class="fa fa-plus"></i> إضافة مهارة جديدة
+                        </button>
+                        <button type="button" id="undo_delete_skill" class="btn btn-warning">
+                            <i class="fa fa-undo"></i> تراجع عن الحذف
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- attachments -->
+        <div class="form-group mb-3">
+            <label>المرفقات (الشهادات / الوثائق)</label>
+
+                <!-- Upload new attachments -->
+                <div >
+                    <input type="file" id="new_attachments_input" name="cv_files" multiple="multiple" class="form-control"/>
+                    <small class="text-muted d-block mb-2">يمكنك رفع عدة ملفات (PDF، صور، Word...)</small>
+                    <div id="new_attachments_preview" class="border rounded p-2 bg-light" style="max-height:180px; overflow-y:auto;">
+                        <p class="text-muted text-center m-2" id="no_new_files">لم تقم بإضافة ملفات بعد.</p>
+                    </div>
+                </div>
+
+                <!-- Current attachments -->
+                <div >
+                    <t t-if="cv.attachment_ids and len(cv.attachment_ids) &gt; 0">
+                        <ul id="current_attachments_list" class="list-group list-group-flush border rounded p-2" style="max-height:180px; overflow-y:auto;">
+                            <t t-foreach="cv.attachment_ids" t-as="att">
+                                <li class="list-group-item d-flex justify-content-between align-items-center" t-att-data-id="att.id">
+                                    <a t-att-href="'/web/content/%s?download=true' % att.id" target="_blank">
+                                        <i class="fa fa-paperclip text-secondary me-2"></i>
+                                        <t t-esc="att.name"/>
+                                    </a>
+                                    <button type="button" class="btn btn-sm btn-danger remove-current-attachment">✖</button>
+                                </li>
+                            </t>
+                        </ul>
+                        <button type="button" id="restore_attachments_btn" class="btn btn-sm btn-secondary mt-2 d-none">↩️ استعادة المحذوفين</button>
+                    </t>
+                    <t t-else="">
+                        <p class="text-muted">لا توجد مرفقات حالياً.</p>
+                    </t>
+                </div>
+            <input type="hidden" name="removed_attachments" id="removed_attachments"/>
+        </div>
+
+
+
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg px-4">💾 حفظ</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // ========helpful methods ========
+    function showToast(message, type='info') {
+        let container = document.getElementById('toast-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'toast-container';
+            container.className = 'position-fixed top-0 end-0 p-3';
+            container.style.zIndex = '2000';
+            document.body.appendChild(container);
+        }
+        const toast = document.createElement('div');
+        const color = type==='success'?'bg-success':type==='error'?'bg-danger':type==='warning'?'bg-warning text-dark':'bg-secondary';
+        toast.className = `toast align-items-center text-white ${color} border-0 show mb-2`;
+        toast.innerHTML = `<div class="d-flex"><div class="toast-body">${message}</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button></div>`;
+        container.appendChild(toast);
+        setTimeout(()=>toast.remove(),4000);
+    }
+
+    function enableAutoExpand(input) {
+        input.classList.add('auto-expand');
+        const resize = () => { input.style.height='auto'; input.style.height = input.scrollHeight+'px'; };
+        input.addEventListener('input', resize);
+        resize();
+    }
+
+    document.querySelectorAll('.auto-expand').forEach(enableAutoExpand);
+
+    // ======== experience , language, skills========
+    const groups = [
+        {prefix:'experience', label:'الخبرة', placeholder:'أدخل خبرة جديدة'},
+        {prefix:'language', label:'اللغة', placeholder:'أدخل لغة جديدة'},
+        {prefix:'skill', label:'المهارة', placeholder:'أدخل مهارة جديدة'}
+    ];
+
+    groups.forEach(g => {
+        const list = document.getElementById(`${g.prefix}_list`);
+        const addBtn = document.getElementById(`add_${g.prefix}`);
+        const undoBtn = document.getElementById(`undo_delete_${g.prefix}`);
+        const deleted = [];
+        if (!list || !addBtn || !undoBtn) return;
+        undoBtn.classList.add('d-none');
+
+        //add new element
+        addBtn.addEventListener('click', () => {
+            const div = document.createElement('div');
+            div.className = `${g.prefix}-item d-flex align-items-center gap-2 mb-2`;
+            div.innerHTML = `<input type="text" name="${g.prefix}_ids[]" class="form-control auto-expand" placeholder="${g.placeholder}"/>
+                <button type="button" class="btn btn-danger btn-sm remove-${g.prefix}"><i class="fa fa-trash"></i></button>`;
+            list.appendChild(div);
+            enableAutoExpand(div.querySelector('input'));
+            showToast(`تمت إضافة ${g.label} جديدة`, 'info');
+        });
+
+        // remove element
+        list.addEventListener('click', e => {
+            const btn = e.target.closest(`.remove-${g.prefix}`);
+            if (btn) {
+                const item = btn.closest(`.${g.prefix}-item`);
+                const val = item.querySelector('input').value;
+                if (val) deleted.push(val);
+                item.remove();
+                if (deleted.length > 0) undoBtn.classList.remove('d-none');
+                showToast(`تم حذف ${g.label}. يمكنك التراجع.`, 'warning');
+
+            }
+        });
+
+        // undo removing elements
+        undoBtn.addEventListener('click', () => {
+            if (deleted.length > 0) {
+                const last = deleted.pop();
+                const div = document.createElement('div');
+                div.className = `${g.prefix}-item d-flex align-items-center gap-2 mb-2`;
+                div.innerHTML = `<input type="text" name="${g.prefix}_ids[]" class="form-control auto-expand" value="${last}"/>
+                    <button type="button" class="btn btn-danger btn-sm remove-${g.prefix}"><i class="fa fa-trash"></i></button>`;
+                list.appendChild(div);
+                enableAutoExpand(div.querySelector('input'));
+                if (deleted.length === 0) undoBtn.classList.add('d-none');
+                showToast(`تم التراجع عن حذف ${g.label}`, 'success');
+
+            }
+        });
+    });
+
+    // ======== attachments ========
+    const newInput = document.getElementById('new_attachments_input');
+    const preview = document.getElementById('new_attachments_preview');
+    const noFilesMsg = document.getElementById('no_new_files');
+    const currentList = document.getElementById('current_attachments_list');
+    const restoreBtn = document.getElementById('restore_attachments_btn');
+    const removedInput = document.getElementById('removed_attachments');
+
+    let newFiles = [];
+    let removedAttachments = [];
+    let removedElements = [];
+
+    function updateInputFiles(){
+        const dt = new DataTransfer();
+        newFiles.forEach(f => dt.items.add(f));
+        newInput.files = dt.files;
+    }
+
+    function renderNewFiles(){
+        preview.innerHTML = '';
+        if(newFiles.length === 0){
+            noFilesMsg.style.display = 'block';
+            return;
+        }
+        noFilesMsg.style.display = 'none';
+        newFiles.forEach((file, idx) => {
+            const div = document.createElement('div');
+            div.className = 'd-flex justify-content-between align-items-center border-bottom py-1';
+            div.innerHTML = `<span><i class="fa fa-file me-2 text-secondary"></i>${file.name}</span>
+                <button type="button" class="btn btn-sm btn-danger remove-new-file" data-index="${idx}">✖</button>`;
+            preview.appendChild(div);
+        });
+    }
+
+    //delete new file
+    preview.addEventListener('click', e => {
+        if (e.target.closest('.remove-new-file')) {
+            const idx = parseInt(e.target.closest('.remove-new-file').dataset.index);
+            newFiles.splice(idx, 1);
+            renderNewFiles();
+            updateInputFiles();
+        }
+    });
+
+    newInput.addEventListener('change', () => {
+        const selected = Array.from(newInput.files);
+        newFiles = [...newFiles, ...selected];
+        renderNewFiles();
+        updateInputFiles();
+    });
+
+     //remove attachments temporary
+    if(currentList){
+        currentList.addEventListener('click', e => {
+            if(e.target.closest('.remove-current-attachment')){
+                const li = e.target.closest('li');
+                removedAttachments.push(li.dataset.id);
+                removedElements.push(li);
+                li.remove();
+                removedInput.value = removedAttachments.join(',');
+                restoreBtn.classList.remove('d-none');
+            }
+        });
+    }
+
+    //restore deleted attachments
+    if(restoreBtn){
+        restoreBtn.addEventListener('click', () => {
+            removedElements.forEach(li => currentList.appendChild(li));
+            removedElements = [];
+            removedAttachments = [];
+            removedInput.value = '';
+            restoreBtn.classList.add('d-none');
+        });
+    }
+
+});
+</script>
+
+
+    </t>
+</template>
+
+    <!--page no graduate data -->
+    <template id="portal_no_graduate" name="No Graduate Found">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <div class="alert alert-danger text-center">
+                    <h4>🚫 لا يوجد سجل خريج مرتبط بحسابك.</h4>
+                    <p>يرجى التواصل مع الإدارة لتحديث بياناتك.</p>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

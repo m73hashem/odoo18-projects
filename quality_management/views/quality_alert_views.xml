@@ -1,0 +1,77 @@
+<odoo>
+
+    <record id="view_quality_alert_list" model="ir.ui.view">
+        <field name="name">quality.alert.list</field>
+        <field name="model">quality.alert</field>
+        <field name="arch" type="xml">
+            <list create="false">
+                <field name="name"/>
+                <field name="metric_id"/>
+                <field name="min_threshold"/>
+                <field name="last_state" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_quality_alert_form" model="ir.ui.view">
+        <field name="name">quality.alert.form</field>
+        <field name="model">quality.alert</field>
+        <field name="arch" type="xml">
+            <form string="Quality alert" create="false" edit="true">
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <field name="metric_id"/>
+                        <field name="min_threshold"/>
+                        <field name="last_state" readonly="1"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="quality_alert_view_search" model="ir.ui.view">
+        <field name="name">quality.alert.search</field>
+        <field name="model">quality.alert</field>
+        <field name="arch" type="xml">
+            <search string="Quality Alerts">
+
+                <!-- SEARCH -->
+                <field name="name"/>
+                <field name="metric_id"/>
+
+                <!-- FILTER -->
+                <filter string="Low Alerts"
+                        name="alert_low"
+                        domain="[('last_state','=','low')]"/>
+
+                <!-- GROUP BY -->
+                <group expand="0" string="Group By">
+                    <filter string="State"
+                            name="group_alert_state"
+                            context="{'group_by':'last_state'}"/>
+
+                    <filter string="Metric"
+                            name="group_metric"
+                            context="{'group_by':'metric_id'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_quality_alerts" model="ir.actions.act_window">
+        <field name="name">Quality alerts</field>
+        <field name="res_model">quality.alert</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

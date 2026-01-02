@@ -1,0 +1,20 @@
+
+<odoo>
+    <template id="graduate_events_inherit_index" inherit_id="website_event.index" name="Graduate Events Customization">
+        <!-- Alert to ungraduates -->
+        <!-- <xpath expr="//div[@class='o_wevent_events_list']" position="before">
+            <t t-if="not is_graduate">
+                <div class="alert alert-info text-center">
+                    هذه الأحداث العامة فقط، لتتمكن من مشاهدة الاحداث الخاصة بالخريجين سجل كخريج.
+                </div>
+            </t>
+        </xpath> -->
+
+        <!-- Filter events-->
+        <xpath expr="//t[@t-call='website_event.events_list']" position="replace">
+            <t t-call="website_event.events_list">
+                <t t-set="event_ids" t-value="event_ids.filtered(lambda e: is_graduate or not e.show_to_graduates)"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>

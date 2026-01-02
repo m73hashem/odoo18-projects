@@ -1,0 +1,916 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* quality_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-04 11:36+0000\n"
+"PO-Revision-Date: 2025-12-04 11:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_quality_management
+msgid "Quality Management System"
+msgstr "نظام إدارة الجودة"
+
+#. module: base
+#: model:ir.module.module,summary:base.module_quality_management
+msgid "Central Quality Management for training services"
+msgstr "نظام إدارة الجودة للخدمات التعليمية"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_alert__last_state__high
+msgid "Above the limit"
+msgstr "أعلى من الحد الأدنى"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_needaction
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_needaction
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_needaction
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء مطلوب"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_ids
+msgid "Activities"
+msgstr "المهام"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_exception_decoration
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_exception_decoration
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تزيين استثناء المهمة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_state
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_state
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_state
+msgid "Activity State"
+msgstr "حالة المهمة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_type_icon
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_type_icon
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع المهمة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__name
+msgid "Alert Name"
+msgstr "اسم التنبيه"
+
+#. module: quality_management
+#. odoo-python
+#: code:addons/quality_management/models/quality_metric.py:0
+msgid "Alert of : %s"
+msgstr "تنبيه لمؤشر %s"
+
+#. module: quality_management
+#: model:ir.ui.menu,name:quality_management.menu_quality_alerts
+msgid "Alerts"
+msgstr "التنبيهات"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__partner_id
+msgid "Answered By"
+msgstr "تمت إجابته بواسطة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_attachment_count
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_attachment_count
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_attachment_count
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__avg_score
+msgid "Average"
+msgstr "المعدل"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__partner_id
+msgid "Beneficiary"
+msgstr "المستفيد"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__sentiment
+msgid "Beneficiary feeling"
+msgstr "شعور المستفيدين"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_plan_procedure_form
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: quality_management
+#: model:res.groups,name:quality_management.group_quality_center_management
+msgid "Center Management"
+msgstr "إدارة المركز"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__comment
+msgid "Comment"
+msgstr "تعليق"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__complaint_count
+msgid "Complaint Count"
+msgstr "عدد الشكاوى"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: quality_management
+#: model:ir.ui.menu,name:quality_management.menu_quality_configuration
+msgid "Configuration"
+msgstr "الاعدادات"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__count
+msgid "Count"
+msgstr "العدد"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__course_id
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_metric__metric_target__course
+msgid "Course"
+msgstr "الدورة التدريبية"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__create_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__create_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__create_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__create_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__create_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__create_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__create_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__create_uid
+msgid "Created by"
+msgstr "تم الانشاء بواسطة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__create_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__create_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__create_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__create_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__create_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__create_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__create_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__criteria_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__name
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__name
+msgid "Criteria"
+msgstr "المعايير"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__issue_description
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__description
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__display_name
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__display_name
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__display_name
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__display_name
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__display_name
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__display_name
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__display_name
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__display_name
+msgid "Display Name"
+msgstr "الاسم"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_plan__state__done
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_plan_procedure__state__done
+msgid "Done"
+msgstr "مكتملة"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_plan__state__draft
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_plan_procedure__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__end_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_metric_form
+msgid "Enhance Quality"
+msgstr "تحسين الجودة"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_metric_form
+msgid "Evaluation Criteria"
+msgstr "معايير التقييم"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__metric_target
+msgid "Evaluation Goal"
+msgstr "هدف التقييم"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_alert__last_state__exact
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_metric__alert_state__exact
+msgid "Exact"
+msgstr "على وجه التحديد"
+
+#. module: quality_management
+#: model:ir.actions.act_window,name:quality_management.action_quality_feedback
+msgid "Feedback"
+msgstr "الانطباع"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_follower_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_follower_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_follower_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_partner_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_partner_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_partner_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__activity_type_icon
+#: model:ir.model.fields,help:quality_management.field_quality_metric__activity_type_icon
+#: model:ir.model.fields,help:quality_management.field_quality_plan__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__has_message
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__has_message
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__has_message
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_metric__alert_state__high
+msgid "High"
+msgstr "أعلى من الحد"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__id
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__id
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__id
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__id
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__id
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__id
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__id
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__id
+msgid "ID"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_exception_icon
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_exception_icon
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__activity_exception_icon
+#: model:ir.model.fields,help:quality_management.field_quality_metric__activity_exception_icon
+#: model:ir.model.fields,help:quality_management.field_quality_plan__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_quality_alert__message_needaction
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__message_needaction
+#: model:ir.model.fields,help:quality_management.field_quality_metric__message_needaction
+#: model:ir.model.fields,help:quality_management.field_quality_plan__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_quality_alert__message_has_error
+#: model:ir.model.fields,help:quality_management.field_quality_alert__message_has_sms_error
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__message_has_error
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__message_has_sms_error
+#: model:ir.model.fields,help:quality_management.field_quality_metric__message_has_error
+#: model:ir.model.fields,help:quality_management.field_quality_metric__message_has_sms_error
+#: model:ir.model.fields,help:quality_management.field_quality_plan__message_has_error
+#: model:ir.model.fields,help:quality_management.field_quality_plan__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__feedback_text
+msgid "Impression"
+msgstr "الانطباع"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_metric__metric_state__improving
+msgid "Improving"
+msgstr "تحسن"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_plan__state__in_progress
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_plan_procedure__state__in_progress
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_is_follower
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_is_follower
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_is_follower
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__write_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__write_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__write_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__write_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__write_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__write_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__write_uid
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__write_uid
+msgid "Last Updated by"
+msgstr "اخر تعديل بواسطة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__write_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__write_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__write_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__write_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__write_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__write_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__write_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_alert__last_state__low
+msgid "Less than the minimum"
+msgstr "أقل من الحد الادنى"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_metric__alert_state__low
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_metric__metric_state__low
+msgid "Low"
+msgstr "منخفض"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_plan_procedure_form
+msgid "Make Plan"
+msgstr "عمل خطة"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.metric_survey_question_form_inherit
+msgid "Mapping"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_has_error
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_has_error
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_has_error
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__criteria_id
+msgid "Metric Criteria"
+msgstr "معايير المؤشر"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__metric_state
+msgid "Metric State"
+msgstr "حالة المؤشر"
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_survey_question__metric_id
+#: model:ir.model.fields,help:quality_management.field_survey_survey__metric_id
+msgid "Metric this survey belongs to"
+msgstr "المقياس الذي ينتمي إليه هذا الاستطلاع"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__min_threshold
+msgid "Minimum Permissible (%)"
+msgstr "الحد الأدنى المسموح به"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__my_activity_date_deadline
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__my_activity_date_deadline
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_feedback__sentiment__negative
+msgid "Negative"
+msgstr "سلبي"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_feedback__sentiment__neutral
+msgid "Neutral"
+msgstr "محايد"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_calendar_event_id
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_calendar_event_id
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_date_deadline
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_date_deadline
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_summary
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_summary
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_type_id
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_type_id
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع المهمة التالية"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_needaction_counter
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_needaction_counter
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_needaction_counter
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الاحداث"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_has_error_counter
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_has_error_counter
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_has_error_counter
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_quality_alert__message_needaction_counter
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__message_needaction_counter
+#: model:ir.model.fields,help:quality_management.field_quality_metric__message_needaction_counter
+#: model:ir.model.fields,help:quality_management.field_quality_plan__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_quality_alert__message_has_error_counter
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__message_has_error_counter
+#: model:ir.model.fields,help:quality_management.field_quality_metric__message_has_error_counter
+#: model:ir.model.fields,help:quality_management.field_quality_plan__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__participant_ids
+msgid "Participant"
+msgstr "مشارك"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__participant_count
+msgid "Participant Count"
+msgstr "عدد المشاركين"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_metric_form
+msgid "Participants"
+msgstr "المشاركين"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__plan_id
+msgid "Plan"
+msgstr "خطة"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_plan_form
+msgid "Plan Procedures"
+msgstr "اجراءات الخطة"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_feedback__sentiment__positive
+msgid "Positive"
+msgstr "ايجابي"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__last_state
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__alert_state
+msgid "Previous State"
+msgstr "الحالة السابقة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__name
+msgid "Procedure Name"
+msgstr "اسم الاجراء"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__procedure_ids
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_plan_form
+msgid "Procedures"
+msgstr "الاجراءات"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__progress
+msgid "Progress (%)"
+msgstr "نسبة الانجاز (%)"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_quality_alert
+msgid "Quality Alert"
+msgstr "تنبيه الجودة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_survey_question__metric_criteria_id
+#: model:ir.model.fields,field_description:quality_management.field_survey_user_input_line__metric_criteria_id
+msgid "Quality Criteria"
+msgstr "معايير الجودة"
+
+#. module: quality_management
+#: model:res.groups,name:quality_management.group_quality_department_manager
+msgid "Quality Department Manager"
+msgstr "مدير قسم الجودة"
+
+#. module: quality_management
+#: model:res.groups,name:quality_management.group_quality_employee
+msgid "Quality Employee"
+msgstr "موظف الجودة"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_quality_team
+msgid "Quality Evaluation Team"
+msgstr "فريق تقييم الجودة"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_quality_feedback
+msgid "Quality Feedback"
+msgstr "ردود فعل الجودة"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_quality_plan
+msgid "Quality Improvement Plan"
+msgstr "خطة تحسين الجودة"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_quality_plan_procedure
+msgid "Quality Improvement Procedure"
+msgstr "إجراءات تحسين الجودة"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_quality_metric
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__metric_id
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__metric_id
+#: model:ir.ui.menu,name:quality_management.menu_quality_metrics
+msgid "Quality Metric"
+msgstr "مقياس الجودة"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_quality_metric_criteria
+msgid "Quality Metric Criteria"
+msgstr "معايير قياس الجودة"
+
+#. module: quality_management
+#: model:ir.actions.act_window,name:quality_management.action_quality_metrics
+msgid "Quality Metrics"
+msgstr "مقاييس الجودة"
+
+#. module: quality_management
+#: model:ir.actions.act_window,name:quality_management.action_quality_plans
+#: model:ir.ui.menu,name:quality_management.menu_quality_plans
+msgid "Quality Plans"
+msgstr "خطط الجودة"
+
+#. module: quality_management
+#: model:ir.ui.menu,name:quality_management.menu_quality_root
+msgid "Quality System"
+msgstr "نظام الجودة"
+
+#. module: quality_management
+#: model:res.groups,name:quality_management.group_quality_system_manager
+msgid "Quality System Manager"
+msgstr "مدير نظام الجودة"
+
+#. module: quality_management
+#: model:ir.actions.act_window,name:quality_management.action_quality_team
+#: model:ir.ui.menu,name:quality_management.menu_quality_team
+msgid "Quality Teams"
+msgstr "فرق الجودة"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_alert_form
+msgid "Quality alert"
+msgstr "تنبيه الجودة"
+
+#. module: quality_management
+#: model:ir.actions.act_window,name:quality_management.action_quality_alerts
+msgid "Quality alerts"
+msgstr "تنبيهات الجودة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__rating_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__rating_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__rating_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__rating_ids
+msgid "Ratings"
+msgstr "التقييمات"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_plan_procedure_form
+msgid "Re-do"
+msgstr "إعادة تنفيذ"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__recommendation
+msgid "Recommendation"
+msgstr "توصية"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__recommendations
+msgid "Recommendations"
+msgstr "التوصيات"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__alert_ids
+msgid "Related Alerts"
+msgstr "التنبيهات المرتبطة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__metric_id
+#: model:ir.model.fields,field_description:quality_management.field_survey_question__metric_id
+#: model:ir.model.fields,field_description:quality_management.field_survey_survey__metric_id
+msgid "Related Metric"
+msgstr "المقياس المرتبط"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__metric_ids
+msgid "Related Metrics"
+msgstr "المقاييس المرتبطة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__metric_manager_id
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__plan_manager_id
+msgid "Responsible"
+msgstr "المسؤول"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__activity_user_id
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__activity_user_id
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__activity_user_id
+msgid "Responsible User"
+msgstr "المسؤول"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__message_has_sms_error
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__message_has_sms_error
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__message_has_sms_error
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__satisfaction_rate
+msgid "Satisfaction Rate (%)"
+msgstr "معدل الرضا (%)"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_res_config_settings__contact_api_school_id
+msgid "School Contact"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_participant__score
+msgid "Score"
+msgstr "النتيجة"
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_survey_question__metric_criteria_id
+#: model:ir.model.fields,help:quality_management.field_survey_user_input_line__metric_criteria_id
+msgid "Score from this question will count toward this criteria."
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__course_id
+msgid "Service"
+msgstr "الخدمة"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_plan_procedure_form
+msgid "Set To Draft"
+msgstr "تعيين كمسودة"
+
+#. module: quality_management
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_metric__metric_state__stable
+msgid "Stable"
+msgstr "مستقر"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__start_date
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__start_date
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_plan_procedure_form
+msgid "Start Plan"
+msgstr "تنفيذ الخطة"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__state
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan_procedure__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__activity_state
+#: model:ir.model.fields,help:quality_management.field_quality_metric__activity_state
+#: model:ir.model.fields,help:quality_management.field_quality_plan__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__success_rate
+msgid "Success Rate (%)"
+msgstr "معدل النجاح (%)"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_survey_survey
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__survey_id
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_metric_form
+msgid "Survey"
+msgstr "استطلاع "
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_survey_question
+msgid "Survey Question"
+msgstr "سؤال الاستطلاع"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__survey_score
+msgid "Survey Result"
+msgstr "نتيجة الاستطلاع"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_survey_user_input
+msgid "Survey User Input"
+msgstr "مُدخلات مستخدم الاستطلاع"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_survey_user_input_line
+msgid "Survey User Input Line"
+msgstr "بند مُدخلات مستخدم الاستطلاع"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__target_value
+msgid "Target Value (%)"
+msgstr "القيمة المستهدفة (%)"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__team_id
+msgid "Team"
+msgstr "الفريق"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__team_member_ids
+msgid "Team Members"
+msgstr "أعضاء الفريق"
+
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__manager_id
+msgid "Team Manager"
+msgstr "مدير الفريق"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__member_ids
+msgid "Team Members"
+msgstr "اعضاء الفريق"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_team__name
+msgid "Team Name"
+msgstr "اسم الفريق"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__name
+msgid "Title"
+msgstr "العنوان"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__total_score
+msgid "Total Score"
+msgstr "النتيجة النهائية"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__package_id
+#: model:ir.model.fields.selection,name:quality_management.selection__quality_metric__metric_target__package
+msgid "Training Package"
+msgstr "الحقيبة التدريبية"
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__activity_exception_decoration
+#: model:ir.model.fields,help:quality_management.field_quality_metric__activity_exception_decoration
+#: model:ir.model.fields,help:quality_management.field_quality_plan__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: quality_management
+#: model_terms:ir.ui.view,arch_db:quality_management.view_quality_metric_form
+msgid "View Alerts"
+msgstr "عرض التنبيهات"
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_alert__website_message_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__website_message_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric__website_message_ids
+#: model:ir.model.fields,field_description:quality_management.field_quality_plan__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,help:quality_management.field_quality_alert__website_message_ids
+#: model:ir.model.fields,help:quality_management.field_quality_feedback__website_message_ids
+#: model:ir.model.fields,help:quality_management.field_quality_metric__website_message_ids
+#: model:ir.model.fields,help:quality_management.field_quality_plan__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_metric_criteria__weight
+msgid "Weight(%)"
+msgstr "الوزن (%)"
+
+#. module: quality_management
+#: model:ir.model,name:quality_management.model_quality_metric_participant
+msgid "quality.metric.participant"
+msgstr ""
+
+#. module: quality_management
+#: model:ir.model.fields,field_description:quality_management.field_quality_feedback__name
+msgid "Name"
+msgstr "الاسم"

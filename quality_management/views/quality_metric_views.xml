@@ -1,0 +1,160 @@
+<odoo>
+    <record id="view_quality_metric_list" model="ir.ui.view">
+        <field name="name">quality.metric.list</field>
+        <field name="model">quality.metric</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="team_id"/>
+                <field name="team_member_ids" widget="many2many_tags"/>
+                <field name="satisfaction_rate"/>
+                <field name="success_rate"/>
+                <field name="complaint_count"/>
+                <field name="metric_state"/>
+                
+            </list>
+        </field>
+    </record>
+
+    <record id="view_quality_metric_form" model="ir.ui.view">
+        <field name="name">quality.metric.form</field>
+        <field name="model">quality.metric</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="metric_state" widget="statusbar"
+                           statusbar_visible="low,stable,improving"/>
+                        <!-- <field name="alert_state" widget="statusbar"
+                           statusbar_visible="low,exact,high"/> -->
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_alerts" type="object" string="View Alerts" class="oe_stat_button"/>
+              
+                        <button name="action_open_survey" class="oe_stat_button" icon="fa-check-square-o"
+                                type="object" string="Survey">
+                            <field name="survey_id" widget="statinfo" invisible="1"/>
+                        </button>
+
+                        <button name="action_open_plans"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-tasks"
+                            string="Enhance Quality"
+                            invisible = "metric_state != 'low' " >
+                        </button>
+
+                    </div>
+
+                    <group>
+                        <group>
+                        <field name="name"/>
+                        <field name="metric_manager_id"/>
+                        <field name="metric_target"/>
+                        <field name="package_id" invisible="metric_target != 'package' "/>
+                        <field name="course_id" invisible="metric_target != 'course' "/>
+                        <field name="target_value"/>
+                        <!-- <field name="success_rate"/> -->
+                        <!-- <field name="complaint_count"/> -->
+                        
+                        </group>
+                        
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="team_id"/>
+                            <field name="satisfaction_rate" readonly="1"/>
+                            <field name="participant_count" readonly="1"/>
+                        </group>
+                    </group> 
+                    <notebook>
+                        <page string="Evaluation Criteria">
+                            <field name="criteria_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <!-- <field name="total_score" readonly="1"/> -->
+                                    <field name="avg_score" readonly="1"/>
+                                    
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Participants">
+                            <field name="participant_ids" readonly="1">
+                                <list create="false" edit="false" delete="false">
+                                    <field name="name"/>
+                                    <field name="partner_id"/>
+                                    <field name="score"/>
+                                    <field name="comment"/>
+                                    <field name="recommendation"/>
+
+                                </list>
+                            </field>
+                        </page>
+<!-- 
+                        <page name="recommendations" string="Recommendations">
+                            <field name="recommendations" options="{'resizable': false}"
+                                   placeholder="Recommendations ..."/>
+                        </page>
+
+                        <page name="notes" string="Notes">
+                            <field name="notes" options="{'resizable': false}" placeholder="Notes ..."/>
+                        </page> -->
+
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="quality_metric_view_search" model="ir.ui.view">
+        <field name="name">quality.metric.search</field>
+        <field name="model">quality.metric</field>
+        <field name="arch" type="xml">
+            <search string="Quality Metrics">
+
+                <!-- SEARCH -->
+                <field name="name"/>
+                <field name="metric_target"/>
+                <field name="metric_manager_id"/>
+                <field name="team_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+
+                <!-- FILTER -->
+                <filter string="Low Metrics"
+                        name="metric_low"
+                        domain="[('metric_state','=','low')]"/>
+
+                <filter string="Improving Metrics"
+                        name="metric_improving"
+                        domain="[('metric_state','=','improving')]"/>
+
+                <!-- GROUP BY -->
+                <group expand="0" string="Group By">
+                    <filter string="Metric State"
+                            name="group_metric_state"
+                            context="{'group_by':'metric_state'}"/>
+
+                    <filter string="Responsible"
+                            name="group_metric_manager"
+                            context="{'group_by':'metric_manager_id'}"/>
+
+                    <filter string="Team"
+                            name="group_team"
+                            context="{'group_by':'team_id'}"/>
+                </group>
+
+
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_quality_metrics" model="ir.actions.act_window">
+        <field name="name">Quality Metrics</field>
+        <field name="res_model">quality.metric</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

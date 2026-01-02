@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- صفحة عرض السجل للمستخدم -->
+    <template id="portal_my_graduate_main" name="Portal - My Graduate">
+        <t t-call="website.layout">
+            <style>
+                    .dashboard-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                        transition: all 0.3s ease;
+                    }
+                    .dashboard-card i {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                </style>
+
+            <div class="container mt-5 mb-5">
+                <h2 class="mb-4 text-primary fw-bold">🎓 مرحباً <t t-esc="graduate.partner_id.name"/>!</h2>
+                <p class="text-muted mb-4">استخدم اللوحة أدناه للتنقل داخل بوابة الخريجين.</p>
+
+                <div class="row g-4">
+                    <!-- الصفحة الرئيسية -->
+                    <div class="col-md-4">
+                        <a href="/my/home" class="dashboard-card text-decoration-none d-block p-4 rounded shadow-sm text-center bg-light">
+                            <div class="mb-3">
+                                <i class="fa fa-home fa-2x text-primary"></i>
+                            </div>
+                            <div class="fw-bold fs-5">🏠 الصفحة الرئيسية</div>
+                        </a>
+                    </div>
+
+                    <!-- السيرة الذاتية -->
+                    <div class="col-md-4">
+                        <a href="/my/cv" class="dashboard-card text-decoration-none d-block p-4 rounded shadow-sm text-center bg-light">
+                            <div class="mb-3">
+                                <i class="fa fa-file fa-2x text-success"></i>
+                            </div>
+                            <div class="fw-bold fs-5">📄 سيرتي الذاتية</div>
+                        </a>
+                    </div>
+
+                    <!-- الدورات التدريبية -->
+                    <div class="col-md-4">
+                        <a href="/my/trainings" class="dashboard-card text-decoration-none d-block p-4 rounded shadow-sm text-center bg-light">
+                            <div class="mb-3">
+                                <i class="fa fa-book fa-2x text-warning"></i>
+                            </div>
+                            <div class="fw-bold fs-5">📘 الدورات التدريبية</div>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </t>
+    </template>
+	
+	<!--   courses Template-->
+    <template id="portal_my_trainings" name="Portal - My Trainings">
+        <t t-call="website.layout">
+            <div class="container mt-5 mb-5">
+
+                <h2 class="mb-4 text-primary fw-bold">📘 الدورات التدريبية الخاصة بك</h2>
+
+                <!-- روابط العودة -->
+                <div class="mb-4">
+                    <a href="/my/home" class="link-item">🏠 الصفحة الرئيسية</a>
+                    <a href="/my/cv" class="link-item">📄 سيرتي الذاتية</a>
+                </div>
+
+                <!-- عرض الكروت -->
+                <t t-if="course_names">
+                    <div class="row g-3">
+                        <t t-foreach="course_names" t-as="course_name">
+                            <div class="col-md-3">
+                                <div class="dashboard-card bg-light p-3 rounded shadow-sm text-center">
+                                    <i class="fa fa-book fa-2x text-warning mb-2"></i>
+                                    <div class="fw-bold fs-6"><t t-esc="course_name"/></div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+                <t t-else="">
+                    <p class="text-muted">لا توجد دورات تدريبية حتى الآن.</p>
+                </t>
+
+            </div>
+        </t>
+    </template>
+	
+</odoo>

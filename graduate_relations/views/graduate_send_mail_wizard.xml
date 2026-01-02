@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_send_graduate_email_wizard" model="ir.ui.view">
+        <field name="name">send.graduate.email.wizard.form</field>
+        <field name="model">send.graduate.email.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Send Email to Graduates">
+                <group>
+                    <field name="subject"/>
+                    <field name="body"/>
+                    <field name="attachment_ids" widget="many2many_binary"/>
+                </group>
+                <footer>
+                    <button string="Send" type="object" name="action_send_email" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_open_send_graduate_email_wizard" model="ir.actions.act_window">
+        <field name="name">Send Email to Graduates</field>
+        <field name="res_model">send.graduate.email.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_graduate_ids': active_ids}</field>
+    </record>
+
+    <record id="server_action_send_email" model="ir.actions.server">
+        <field name="name">Send Email to Selected Graduates</field>
+        <field name="model_id" ref="graduate_relations.model_training_graduate"/>
+        <field name="state">code</field>
+        <field name="binding_model_id" ref="graduate_relations.model_training_graduate"/>
+        <field name="binding_view_types">list</field>
+        <field name="binding_type">action</field>
+        <field name="code">
+    action = env.ref('graduate_relations.action_open_send_graduate_email_wizard').read()[0]
+        </field>
+    </record>
+
+
+</odoo>

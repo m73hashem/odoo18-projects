@@ -1,0 +1,91 @@
+<odoo>
+    <record id="view_partner_activity_list" model="ir.ui.view">
+        <field name="name">partner.activity.list</field>
+        <field name="model">partner.activity</field>
+        <field name="groups_id" eval="[(4, ref('partners_management.group_partner_manager'))]"/>
+        <field name="arch" type="xml">
+            <list >
+                <field name="name"/>
+                <field name="plan_id"/>
+                <field name="status"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="responsible_user_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_partner_activity_form" model="ir.ui.view">
+        <field name="name">partner.activity.form</field>
+        <field name="model">partner.activity</field>
+        <field name="arch" type="xml">
+            <form >
+                <sheet>
+                    <header>
+                        <field name="status" widget="statusbar" statusbar_visible="pending,done"/>
+
+                        <button name="action_set_done" type="object" string="Make as Done"
+                                class="btn-success"
+                                invisible="status == 'done' or not show_done_button " />
+
+                    </header>
+                    <group>
+                        <field name="plan_id"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="responsible_user_id"/>
+                    </group>
+                </sheet>
+
+                <!-- Chatter -->
+                <chatter/>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="partner_activity_view_search" model="ir.ui.view">
+        <field name="name">partner.activity.view.search</field>
+        <field name="model">partner.activity</field>
+        <field name="arch" type="xml">
+            <search string="Partner Activities">
+                <!-- SEARCH FIELDS -->
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="plan_id"/>
+                <field name="responsible_user_id"/>
+                <field name="status"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+
+                <!-- STATE FILTERS -->
+                <filter string="Pending" name="state_pending" domain="[('status','=','pending')]"/>
+                <filter string="Done" name="state_done" domain="[('status','=','done')]"/>
+
+                <!-- BUSINESS FILTERS -->
+                <filter string="My Activities" name="my_activities" domain="[('responsible_user_id','=',uid)]"/>
+
+                <!-- GROUP BY -->
+                <group expand="0" string="Group By">
+                    <filter string="Partner" name="group_partner" context="{'group_by':'partner_id'}"/>
+                    <filter string="Plan" name="group_plan" context="{'group_by':'plan_id'}"/>
+                    <filter string="Status" name="group_status" context="{'group_by':'status'}"/>
+                    <filter string="Responsible User" name="group_responsible_user" context="{'group_by':'responsible_user_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <!-- Action -->
+    <record id="action_activity" model="ir.actions.act_window">
+        <field name="name">Activity</field>
+        <field name="res_model">partner.activity</field>
+        <field name="view_mode">form,list</field>
+        <field name="view_id" ref="view_partner_activity_list"/>
+        <field name="context">{'group_by': 'plan_id'}</field>
+    </record>
+
+</odoo>

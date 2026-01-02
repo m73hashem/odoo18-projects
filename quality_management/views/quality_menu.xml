@@ -1,0 +1,22 @@
+<odoo>
+    <menuitem id="menu_quality_root" name="Quality System" sequence="1"  />
+    <menuitem id="menu_quality_metrics" name="Quality Metric" parent="menu_quality_root" action="action_quality_metrics"/>
+    <!-- <menuitem id="menu_quality_feedback" name="Feedback" parent="menu_quality_root" action="action_quality_feedback"/> -->
+    <menuitem id="menu_quality_plans" name="Quality Plans" parent="menu_quality_root" action="action_quality_plans"/>
+    <menuitem id="menu_quality_alerts" name="Alerts" parent="menu_quality_root" action="action_quality_alerts"/>
+
+        
+    <menuitem id="menu_quality_configuration"
+            name="Configuration"
+            parent="menu_quality_root"/>
+
+    <menuitem id="menu_quality_team"
+            name="Quality Teams"
+            parent="menu_quality_configuration"
+            action="action_quality_team"/>
+
+     <!-- <menuitem id="menu_quality_dashboard"
+              name="Dashboard"
+              parent="menu_quality_root" action="action_quality_dashboard"
+             /> -->
+</odoo>

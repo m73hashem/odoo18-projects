@@ -1,0 +1,11 @@
+<odoo>
+    <menuitem id="menu_graduates_root" name="Graduate Relations" sequence="10"/>
+
+
+<!--    <menuitem id="menu_graduates"-->
+<!--              name="Graduates"-->
+<!--              parent="menu_graduates_root"-->
+<!--              action="action_graduate_list"/>-->
+
+
+</odoo>

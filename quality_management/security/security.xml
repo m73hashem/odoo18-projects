@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+
+        <!--   مدير النظام -->
+        <record id="group_quality_system_manager" model="res.groups">
+            <field name="name">Quality System Manager</field>
+            <field name="category_id" ref="quality_management.quality_management_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_system'))]"/>
+        </record>
+
+        <!--  ادارة المركز -->
+        <record id="group_quality_center_management" model="res.groups">
+            <field name="name">Center Management</field>
+            <field name="category_id" ref="quality_management.quality_management_category"/>
+        </record>
+
+        <!--  مدير الإدارة -->
+        <record id="group_quality_department_manager" model="res.groups">
+            <field name="name">Quality Department Manager</field>
+            <field name="category_id" ref="quality_management.quality_management_category"/>
+        </record>
+
+        <!--   موظف الجودة -->
+        <record id="group_quality_employee" model="res.groups">
+            <field name="name">Quality Employee</field>
+            <field name="category_id" ref="quality_management.quality_management_category"/>
+        </record>
+
+    </data>
+</odoo>

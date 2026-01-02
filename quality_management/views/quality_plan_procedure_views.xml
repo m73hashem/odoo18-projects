@@ -1,0 +1,105 @@
+<odoo>
+    <record id="view_quality_plan_procedure_form" model="ir.ui.view">
+        <field name="name">quality.plan.procedure.form</field>
+        <field name="model">quality.plan.procedure</field>
+        <field name="arch" type="xml">
+            <form string="Make Plan">
+                
+                <header>
+                    <button name="action_start" type="object"
+                        string="Start Plan"
+                        class="btn-primary"
+                        invisible="state != 'draft' "/>
+
+                    <button name="action_done" type="object"
+                        string="Cancel"
+                        class="btn-success"
+                        invisible="state != 'in_progress' "/>
+
+                    <button name="action_draft" type="object"
+                        string="Set To Draft"
+                        class="btn-primary"
+                        invisible="state == 'draft' "/>
+                    
+                    <button name="action_start" type="object"
+                        string="Re-do"
+                        class="btn-primary"
+                        invisible="state != 'done' "/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
+                </header>
+
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="plan_id" readonly="1"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_quality_plan_procedure_kanban" model="ir.ui.view">
+        <field name="name">quality.plan.procedure.kanban</field>
+        <field name="model">quality.plan.procedure</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <field name="name"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+                            <strong><field name="name"/></strong>
+                            <div class="text-muted">
+                                <field name="description"/>
+                            </div>
+
+                            <div class="mt8">
+                                <span class="badge" t-att-class="
+                                    state == 'draft' and 'badge-secondary' or
+                                    state == 'in_progress' and 'badge-info' or
+                                    'badge-success' ">
+                                    
+                                    <field name="state"/>
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="quality_plan_procedure_view_search" model="ir.ui.view">
+        <field name="name">quality.plan.procedure.search</field>
+        <field name="model">quality.plan.procedure</field>
+        <field name="arch" type="xml">
+            <search string="Plan Procedures">
+
+                <!-- SEARCH -->
+                <field name="name"/>
+                <field name="plan_id"/>
+
+                <!-- FILTER -->
+                <filter string="In Progress"
+                        name="in_progress"
+                        domain="[('state','=','in_progress')]"/>
+
+                <!-- GROUP BY -->
+                <group expand="0" string="Group By">
+                    <filter string="State"
+                            name="group_state"
+                            context="{'group_by':'state'}"/>
+
+                    <filter string="Plan"
+                            name="group_plan"
+                            context="{'group_by':'plan_id'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+
+</odoo>
